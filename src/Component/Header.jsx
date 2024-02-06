@@ -46,7 +46,7 @@ function Header() {
   return (
     <div
       className="w-full h-20 md:h-28 lg:h-32 flex justify-between items-center  shadow-lg shadow-[#7FB5E61F]-400 bg-opacity-10
-      py-6 px-4"
+      py-6 px-4 md:py-6 md:px-12 lg:py-6 lg:px-16"
     >
       <Logo type="main" />
       <Hamburger text="MENU" svg={menu} handler={handler} />
