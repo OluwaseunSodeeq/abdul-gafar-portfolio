@@ -36,5 +36,3 @@ function Skills() {
     </div>
   );
 }
-
-export default Skills;
