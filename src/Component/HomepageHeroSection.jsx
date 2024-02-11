@@ -1,9 +1,13 @@
 function HomepageHeroSection() {
   return (
-    <div className="  relative flex justify-center items-center flex-col mt-2">
-      <img src="../geezy.png" alt="Abdul-Gafar's" />
-      <div className="bg-plain-white pt-2 relative z-20 bottom-10 md:bottom-7 lg:bottom-5">
-        <h3 className="text-xl md:text-4xl font-bold font-Helvetica leading-7 lg:leading-10 lg:text-6xl text-user-color">
+    <div className=" relative flex justify-center items-center flex-col  overflow-x-hidden mt-22 md:mt-28 lg:mt-32">
+      <img
+        className="w-full py-3 px-6 h-auto md:w-[640px] md:py-3 md:px-8 lg:w-[840px] lg:py-3 lg:px-8 text-center"
+        src="../big-geezy.png"
+        alt="Abdul-Gafar's"
+      />
+      <div className="bg-plain-white  w-full h-auto pb-3 pt-3 relative z-20 bottom-14 md:bottom-12 lg:bottom-16 text-center ">
+        <h3 className="text-xl md:text-4xl font-bold font-Helvetica leading-7 lg:leading-10 lg:text-6xl text-user-color -mt-2 ">
           Abdul-Gafar Jimoh
         </h3>
         <p className="font-normal text-sm md:text-lg lg:text-2xl leading-4 text-user-color text-center ">

@@ -11,7 +11,7 @@ function AboutHeroSection() {
 
   const greetings = ["Hello!", "i’m Gafar!"];
   return (
-    <div>
+    <div className="mt-22 md:mt-28 lg:mt-32">
       <Container>
         <div className="flex flex-col  md:flex-row md:gap-[50px] md:items-center md:justify-center  lg:gap-[104px] md:mt-[40px]">
           <h2 className="flex flex-col">
