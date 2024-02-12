@@ -2,7 +2,7 @@ function Nav() {
   return (
     // <Container>
     <div className=" w-full mx-auto  bg-user-color absolute z-30 ">
-      <ul className=" h-[90vh] flex lg:h-auto flex-col justify-center items-center -mt-[20px]  pb-10 ">
+      <ul className=" h-[90vh] flex lg:h-auto flex-col justify-center items-center -mt-[20px]  pb-5 pt-10 ">
         <li className="font-bold font-Helvetica text-[32px] leading-[48px] text-unactive-color  ">
           Projects
         </li>

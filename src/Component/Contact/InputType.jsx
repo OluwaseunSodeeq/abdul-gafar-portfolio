@@ -24,7 +24,7 @@ function InputType({ each }) {
         type={each.inputType}
         value={input}
         onChange={handler}
-        className="border-b border-[#CECFD1] w-full mt-6 pb-1 pt-2 "
+        className=" bg-transparent border-b border-[#CECFD1] w-full mt-6 pb-1 pt-2 outline-none"
         placeholder={each.placeholdertext}
         style={{
           fontFamily: "Helvetica",

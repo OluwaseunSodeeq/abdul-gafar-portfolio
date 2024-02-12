@@ -241,7 +241,7 @@ function ContactHeroSection() {
               id="usertextAreaValue"
               value={textAreaValue}
               onChange={handler}
-              className="border-b border-[#CECFD1] w-full mt-8 pb-0 pt-2 lg:w-full lg:h-20 "
+              className="border-b border-[#CECFD1] w-full mt-8 pb-0 pt-2 lg:w-full lg:h-20 bg-transparent outline-none "
               placeholder="I saw your portfolio on linkedln. Looks Great! Let”s schedule a call"
               style={{
                 fontFamily: "Helvetica",
