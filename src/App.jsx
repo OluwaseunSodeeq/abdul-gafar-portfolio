@@ -14,9 +14,9 @@ function App() {
       <OpenContextProvider>
         <BrowserRouter>
           <Routes>
-            <Route path="/" element={<Homepage text="CLOSE" />} />
-            <Route path="/about" element={<AboutMe text="CLOSE" />} />
-            <Route path="/contact" element={<Contact text="CLOSE" />} />
+            <Route path="/" element={<Homepage />} />
+            <Route path="/about" element={<AboutMe />} />
+            <Route path="/contact" element={<Contact />} />
           </Routes>
         </BrowserRouter>
         <Footer />

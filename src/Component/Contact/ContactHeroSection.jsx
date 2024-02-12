@@ -210,7 +210,7 @@ function ContactHeroSection() {
     setTextAreaValue(inputValue);
   }
   return (
-    <div className="w-full h-auto mt-22 md:mt-28 lg:mt-32">
+    <div className="w-full h-auto mt-28 lg:mt-32">
       <Container>
         <div className="px-0 py-4">
           <h3 className="font-bold font-Helvetica text-2xl leading-9 tracking-widest text-logo-text lg:text-4xl lg:leading-10">

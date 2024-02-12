@@ -8,7 +8,7 @@ function OpenContextProvider({ children }) {
   const hamburgerHandler = () => setOpen(!open);
 
   return (
-    <OpenContextData.Provider value={{ open, hamburgerHandler }}>
+    <OpenContextData.Provider value={{ open, setOpen, hamburgerHandler }}>
       {children}
     </OpenContextData.Provider>
   );
