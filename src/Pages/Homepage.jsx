@@ -9,7 +9,7 @@ function Homepage() {
     <div className="relative">
       <Header />
       <HomepageHeroSection />
-      <div className=" md:-mt-8 md:flex md:flex-row md:justify-center py-5 ">
+      <div className=" md:flex md:flex-row md:justify-center py-5 ">
         <Skills />
         <HeroContent />
       </div>

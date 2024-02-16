@@ -7,7 +7,7 @@ function ProjectCards() {
       title: "BES",
       subTitle: ["Web App", "Mobile App"],
       text: "BES  is a web app that provides range of engineering services with professionalism and expertise. BES  is a web app that provides range of engineering services with professionalism and expertise ",
-      cardImg: "../bes01.png",
+      cardImg: ["../bespro1.png", "../bespro2.png", "../bespro3.png"],
       link: (
         <svg
           width="16"
@@ -42,7 +42,12 @@ function ProjectCards() {
       title: "flaapcop ",
       subTitle: ["Web App", "Mobile App"],
       text: "BES  is a web app that provides range of engineering services with professionalism and expertise. BES  is a web app that provides range of engineering services with professionalism and expertise ",
-      cardImg: "../Flaap Corporative Landing Page01.png",
+      cardImg: [
+        "../flapro1.png",
+        "../flappro2.png",
+        "../flapro3.png",
+        "../flapro4.png",
+      ],
       link: (
         <svg
           width="16"

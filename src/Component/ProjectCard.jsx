@@ -1,3 +1,8 @@
+// import { useState } from "react";
+// import CustomDot from "./ButtonGroup";
+import Carousel from "react-multi-carousel";
+import "react-multi-carousel/lib/styles.css";
+
 function ProjectCard({ each, projectType }) {
   // UI DATA
   const startIcon = (
@@ -14,7 +19,37 @@ function ProjectCard({ each, projectType }) {
       />
     </svg>
   );
+  const responsive = {
+    superLargeDesktop: {
+      // the naming can be any, depends on you.
+      breakpoint: { max: 4000, min: 3000 },
+      items: 1,
+    },
+    desktop: {
+      breakpoint: { max: 3000, min: 1024 },
+      items: 1,
+    },
+    tablet: {
+      breakpoint: { max: 1024, min: 464 },
+      items: 1,
+    },
+    mobile: {
+      breakpoint: { max: 464, min: 0 },
+      items: 1,
+    },
+  };
 
+  // const [currentSlide, setCurrentSlide] = useState(0);
+
+  // const handleNextSlide = () => {
+  //   // Logic to move to the next slide
+  //   setCurrentSlide((prevSlide) => prevSlide + 1);
+  // };
+
+  // const handlePrevSlide = () => {
+  //   // Logic to move to the previous slide
+  //   setCurrentSlide((prevSlide) => prevSlide - 1);
+  // };
   return (
     <div
       className={
@@ -47,7 +82,11 @@ function ProjectCard({ each, projectType }) {
             {each.text}
           </p>
         </div>
-        <div className="hidden  gap-2 items-center justify-start lg:-mt-12 lg:flex lg:text-base lg:cursor-pointer   ">
+        <div
+          className={`flex  gap-2 items-center justify-start lg:-mt-20  lg:text-base lg:cursor-pointer hover:bg-plain-white p-2 max-w-[153px] lg:py-4 lg:px-5  rounded-md lg:rounded-[8px] ${
+            projectType === 0 ? "bg-bes-bg" : "bg-second-logo-text"
+          }  `}
+        >
           <span
             className={
               projectType === 0
@@ -68,7 +107,30 @@ function ProjectCard({ each, projectType }) {
               : "px-6 py-10 md:px-10 md:py-20 lg:px-12 lg:py-20 bg-[#8C98A1]  rounded-xl"
           }
         >
-          <img className="w-full" src={each.cardImg} alt="" />
+          <Carousel
+            responsive={responsive}
+            swipeable={true}
+            showDots={true}
+            autoPlaySpeed={3000}
+            autoPlay={true}
+            arrows={false}
+            infinite
+            pauseOnHover
+            keyBoardControl={true}
+            draggable={true}
+            // customDot={<CustomDot currentSlide={currentSlide} />}
+            // customDot={<CustomDot currentSlide={currentSlide} />}
+          >
+            {each.cardImg.map((each, i) => (
+              <img
+                key={each}
+                className="w-full"
+                src={each}
+                alt="projects"
+                // setCurrentSlide={i}
+              />
+            ))}
+          </Carousel>
         </div>
         <div className="cursor-pointer flex gap-2 items-center justify-end mt-8 lg:hidden  ">
           <span

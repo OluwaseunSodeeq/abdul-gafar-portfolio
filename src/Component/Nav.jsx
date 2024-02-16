@@ -12,7 +12,7 @@ function Nav() {
       <ul className=" h-[90vh] flex lg:h-auto flex-col justify-center items-center -mt-[20px]  pb-5 pt-10 ">
         <li className="font-bold font-Helvetica text-[32px] leading-[48px] text-unactive-color  ">
           <NavLink onClick={closeHandler} to="/">
-            Projects
+            Home
           </NavLink>
         </li>
         <li className="font-bold font-Helvetica text-[32px] leading-[48px] text-unactive-color  ">
@@ -38,15 +38,13 @@ function Nav() {
         </li>
         <li className="font-bold font-Helvetica text-[32px] leading-[48px] text-unactive-color ">
           <NavLink onClick={closeHandler} to="/">
-            Instagram
+            Twitter
           </NavLink>
-          Instagram
         </li>
         <li className="font-bold font-Helvetica text-[32px] leading-[48px] text-unactive-color ">
           <NavLink onClick={closeHandler} to="/">
             Behance
           </NavLink>
-          Behance
         </li>
       </ul>
     </div>

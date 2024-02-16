@@ -13,7 +13,7 @@ const connectData = {
 };
 function FooterTop() {
   return (
-    <div className="bg-user-color lg:w-full">
+    <div className="hidden bg-user-color lg:w-full">
       <div className="pb-6  pt-8 px-6 lg:px-[104px] md:flex gap-6 flex-col lg:py-[72px] lg:w-[1440px] lg:h-auto lg:mx-auto  lg:justify-between lg:flex-row ">
         <div className="flex gap-6 lg:gap-[56px]">
           {footerTopArray.map((each) => (

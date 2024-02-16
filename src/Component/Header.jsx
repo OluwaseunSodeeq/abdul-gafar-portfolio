@@ -10,28 +10,28 @@ function Header() {
   return (
     <div
       className={`fixed z-30 w-full top-0 ${
-        open ? "" : "shadow-lg shadow-[#7FB5E61F]-400"
+        open
+          ? "bg-user-color"
+          : "shadow-lg shadow-[#7FB5E61F]-400 bg-plain-white"
       }`}
     >
       <div
-        className={`w-full lg:max-w-[1440px]  md:mx-auto overflow-x-hidden
+        className={`w-full lg:max-w-[1440px]  md:mx-auto  overflow-x-hidden 
 h-20 md:h-28 lg:h-32 flex justify-between items-center  
 py-6 px-4 md:py-6 md:px-12 lg:py-6 lg:px-16  relative top-0  ${
-          open
-            ? "bg-user-color duration-500 ease-in-out"
-            : "bg-plain-white duration-500 ease-in-out"
+          open ? " duration-500 ease-in-out" : " duration-500 ease-in-out"
         }      
 `}
       >
         <Logo />
         <Hamburger handler={HamburgerHandler} />
       </div>
-      <div className="w-full lg:max-w-[1440px] lg:w-full lg:mx-auto">
+      <div className="w-full  lg:w-full lg:mx-auto">
         <div
           className={`duration-300 ease-in-out  ${
             open
               ? "  relative  z-30 translate-x-0    "
-              : " relative  z-30 translate-x-full "
+              : " relative  z-30 translate-x-full  "
           }`}
         >
           <Nav />
