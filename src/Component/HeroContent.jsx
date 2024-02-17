@@ -118,7 +118,7 @@ function HeroContent() {
           onMouseLeave={falseFunction}
           key={each.heading}
           // className="py-4 px-6 rounded-lg bg-second-logo-text shadow-2xl lg:w-[886px] lg:h-auto lg:text-left"
-          className={`py-4 px-6 rounded-lg  shadow-xl lg:w-[886px] lg:h-auto lg:text-left   cursor-pointer
+          className={`py-4 px-6 rounded-lg  shadow-custom lg:w-[886px] lg:h-auto lg:text-left   cursor-pointer
             bg-plain-white text-content-color
               hover:bg-content-color hover:text-plain-white
           `}

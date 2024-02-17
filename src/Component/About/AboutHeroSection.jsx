@@ -34,7 +34,7 @@ function AboutHeroSection() {
         </div>
       </Container>
       <Container>
-        <>
+        <div className="shadow-custom p-3 lg:p-5 rounded-[8p">
           <div>
             {aboutContent.map((each, i) => (
               <p
@@ -48,7 +48,7 @@ function AboutHeroSection() {
           <p className="pt-4 font-normal font-Helvetica text-sm leading-6 italic lg:text-2xl md:text-xl text-user-color">
             Email: Gafarj544@gmail.com
           </p>
-        </>
+        </div>
       </Container>
     </div>
   );

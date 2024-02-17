@@ -5,7 +5,7 @@ function Hamburger() {
   return (
     <div
       onClick={hamburgerHandler}
-      className="lg:w-26 flex items-center justify-end cursor-pointer "
+      className="lg:w-26 flex items-center justify-end cursor-pointer lg:border lg:border-content-color lg:rounded-[8px] lg:py-1 lg:px-3"
     >
       <h4
         className={`hidden  font-bold font-Helvetica leading-10 text-lg lg:block ${

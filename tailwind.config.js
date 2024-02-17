@@ -38,6 +38,9 @@ const tailwindConfig = {
         square: "square",
         roman: "upper-roman",
       },
+      boxShadow: {
+        custom: "0px 4px 48px 0px #C7AFAF29",
+      },
     },
   },
   plugins: [],

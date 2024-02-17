@@ -34,7 +34,7 @@ function Skills() {
       onMouseLeave={falseFunction}
     >
       <div
-        className={`lg:w-80 relative border  py-2 px-6  shadow-2xl rounded-[12px] text-content-color hover:bg-content-color hover:text-plain-white`}
+        className={`lg:w-80 relative  py-2 px-6  shadow-custom rounded-[12px] text-content-color hover:bg-content-color hover:text-plain-white`}
       >
         <p
           className={`font-normal font-Helvetica lg:text-3xl text-xl  leading-8 ${

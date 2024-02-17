@@ -82,8 +82,8 @@ function FooterBottom() {
   ];
 
   return (
-    <div className="bg-plain-white">
-      <div className=" pt-8 px-8 pb-6 mt-1 lg:px-[104px] lg:py-8 md:flex md:justify-between md:items-start lg:w-full lg:max-w-[1440px] lg:mx-auto">
+    <div className="bg-plain-white border-[2px] border-t-content-color ">
+      <div className=" pt-8 px-8 pb-6 mt-1 lg:px-[104px] lg:py-8 md:flex md:justify-between md:items-start lg:w-full lg:max-w-[1440px] lg:mx-auto ">
         <p className="text-content-color text-lg tracking-widest font-Helvetica lg:text-2xl">
           Thanks For Stopping by 👋
         </p>
