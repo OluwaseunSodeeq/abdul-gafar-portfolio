@@ -9,7 +9,7 @@ function Nav() {
   return (
     // <Container>
     <div className=" w-full mx-auto  bg-user-color absolute z-30 ">
-      <ul className=" h-[90vh] flex lg:h-auto flex-col justify-center items-center -mt-[20px]  pb-5 pt-10 ">
+      <ul className=" h-[95vh] flex md:h-auto lg:h-auto flex-col justify-center gap-y-2 items-center -mt-[50px]  pb-5 pt-10 ">
         <li className="font-bold font-Helvetica text-[32px] leading-[48px] text-unactive-color  ">
           <NavLink onClick={closeHandler} to="/">
             Home
@@ -34,7 +34,6 @@ function Nav() {
           <NavLink onClick={closeHandler} to="/">
             Dribble
           </NavLink>
-          Dribble
         </li>
         <li className="font-bold font-Helvetica text-[32px] leading-[48px] text-unactive-color ">
           <NavLink onClick={closeHandler} to="/">

@@ -110,7 +110,7 @@ function HeroContent() {
     <div
       className={`font-Helvetica flex flex-col items-center gap-4 py-3 lg:py-0 px-4 lg:gap-8 `}
     >
-      {cardsContent.map((each, i) => (
+      {cardsContent.map((each) => (
         <div
           onMouseEnter={() => {
             handleItemClicked(each);
@@ -118,12 +118,12 @@ function HeroContent() {
           onMouseLeave={falseFunction}
           key={each.heading}
           // className="py-4 px-6 rounded-lg bg-second-logo-text shadow-2xl lg:w-[886px] lg:h-auto lg:text-left"
-          className={`py-4 px-6 rounded-lg  shadow-xl lg:w-[886px] lg:h-auto lg:text-left 
+          className={`py-4 px-6 rounded-lg  shadow-xl lg:w-[886px] lg:h-auto lg:text-left   cursor-pointer
             bg-plain-white text-content-color
               hover:bg-content-color hover:text-plain-white
           `}
         >
-          <div className="w-36 h-11 flex justify-start gap-2 items-center lg:items-start lg:w-44 lg:h-16 lg:flex-col text-inherit ">
+          <div className=" h-11 flex justify-start gap-2 items-center lg:items-start  lg:h-16 lg:flex-col text-inherit ">
             <div
               className={` ${
                 current === each.heading

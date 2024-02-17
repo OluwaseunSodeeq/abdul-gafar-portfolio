@@ -5,7 +5,8 @@ const tailwindConfig = {
     screen: {
       ms: "480px",
       md: "768px",
-      lg: "976px",
+      // lg: "976px",
+      lg: "1024px",
       xl: "1440px",
     },
     extend: {

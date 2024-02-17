@@ -253,7 +253,7 @@ function ContactHeroSection() {
               }}
             />
           </div>
-          <button className=" block font-Helvetica font-medium leading-7 text-base md:text-lg lg:text-xl p-1 md:p-2 lg:p-3 text-content-color border-user-color border-2 rounded-lg md:mt-[40px] lg:mt-[90px]">
+          <button className=" block font-Helvetica font-medium leading-7 text-base md:text-lg lg:text-xl py-1 px-2 md:p-2 lg:py-3 lg:px-4 text-content-color border-user-color border-2 rounded-lg md:mt-[40px] lg:mt-[90px]">
             Send message
           </button>
         </div>
