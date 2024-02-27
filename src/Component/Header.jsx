@@ -5,20 +5,20 @@ import Nav from "./Nav";
 
 function Header() {
   const { open, HamburgerHandler } = useOpenContext();
-  console.log(open);
+  // console.log(open);
 
   return (
     <div
-      className={`fixed z-30 w-full top-0 ${
+      className={`fixed z-50 w-full top-0 ${
         open
           ? "bg-user-color"
           : "shadow-lg shadow-[#7FB5E61F]-400 bg-plain-white"
       }`}
     >
       <div
-        className={`w-full lg:max-w-[1440px]  md:mx-auto  overflow-x-hidden 
-h-20 md:h-28 lg:h-32 flex justify-between items-center  
-py-6 px-4 md:py-6 md:px-12 lg:py-6 lg:px-16  relative top-0  ${
+        className={`w-full lg:max-w-[1440px]  md:mx-auto  overflow-hidden 
+h-20 md:h-28 lg:h-32 flex justify-between items-center  border-red 
+py-6 px-4  md:px-12 lg:py-6 lg:px-16  relative top-0  ${
           open ? " duration-500 ease-in-out" : " duration-500 ease-in-out"
         }      
 `}

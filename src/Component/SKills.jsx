@@ -28,13 +28,11 @@ function Skills() {
     "Color Theory",
   ];
   return (
-    <div
-      className="py-3 lg:py-0 px-4 cursor-pointer"
-      onMouseEnter={trueFunction}
-      onMouseLeave={falseFunction}
-    >
+    <div className="py-3 lg:py-0 lg:px-0 px-4 md:px-12 ">
       <div
-        className={`lg:w-80 relative  py-2 px-6  shadow-custom rounded-[12px] text-content-color hover:bg-content-color hover:text-plain-white`}
+        className={`lg:w-80 relative cursor-pointer  py-2 px-6  shadow-custom rounded-[12px] text-content-color hover:bg-content-color hover:text-plain-white`}
+        onMouseEnter={trueFunction}
+        onMouseLeave={falseFunction}
       >
         <p
           className={`font-normal font-Helvetica lg:text-3xl text-xl  leading-8 ${
@@ -44,15 +42,15 @@ function Skills() {
           Skills
         </p>
 
-        <div className=" mt-2 px-2 lg:mt-6">
+        <div className=" mt-2 px-2 lg:mt-6 pb-3">
           {skillsArray.map((each) => (
-            <div key={each} className=" flex gap-2  items-center lg:mt-1.5">
+            <div key={each} className=" flex gap-2  items-center lg:mt-1.5 ">
               <div
                 className={` md:w-2 md:h-2  w-1.5 h-1.5 border rounded-full ${
                   ui === true ? "bg-plain-white" : "bg-content-color"
                 }`}
               ></div>
-              <p className="font-bold font-Helvetica text-sm md:text-base text-inherit leading-7 px-2">
+              <p className="font-bold font-Helvetica text-sm md:text-base text-inherit leading-9 px-2">
                 {each}
               </p>
             </div>

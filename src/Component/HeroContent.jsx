@@ -108,7 +108,7 @@ function HeroContent() {
 
   return (
     <div
-      className={`font-Helvetica flex flex-col items-center gap-4 py-3 lg:py-0 px-4 lg:gap-8 `}
+      className={`font-Helvetica flex flex-col items-center gap-4 py-3 lg:py-0 px-4 lg:gap-y-8 md:px-12 lg:px-0`}
     >
       {cardsContent.map((each) => (
         <div
@@ -118,7 +118,7 @@ function HeroContent() {
           onMouseLeave={falseFunction}
           key={each.heading}
           // className="py-4 px-6 rounded-lg bg-second-logo-text shadow-2xl lg:w-[886px] lg:h-auto lg:text-left"
-          className={`py-4 px-6 rounded-lg  shadow-custom lg:w-[886px] lg:h-auto lg:text-left   cursor-pointer
+          className={`py-4 px-6 rounded-lg  shadow-custom lg:max-w-[886px] lg:h-auto lg:text-left   cursor-pointer
             bg-plain-white text-content-color
               hover:bg-content-color hover:text-plain-white
           `}

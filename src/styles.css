@@ -1,0 +1,12 @@
+.slick-slider .slick-dots {
+  font-size: 2rem;
+}
+
+.custom-dots {
+  width: 88px;
+  height: 26px;
+  background-color: #333437;
+  display: flex;
+  justify-content: center;
+  border-radius: 50%;
+}

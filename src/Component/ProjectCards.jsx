@@ -81,7 +81,7 @@ function ProjectCards() {
   ];
 
   return (
-    <div className="flex flex-col py-5 lg:flex-col-reverse">
+    <div className="w-full flex flex-col py-5 lg:flex-col-reverse ">
       {projectArray.map((each, i) => (
         <ProjectCard each={each} projectType={i} key={each.title} />
       ))}

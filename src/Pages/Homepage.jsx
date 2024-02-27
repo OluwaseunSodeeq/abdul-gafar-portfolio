@@ -6,10 +6,10 @@ import Skills from "../Component/Skills";
 
 function Homepage() {
   return (
-    <div className="relative">
+    <div className="relative  ">
       <Header />
       <HomepageHeroSection />
-      <div className=" lg:flex lg:justify-center py-5 ">
+      <div className="lg:w-full lg:max-w-[1440px] lg:flex lg:justify-between  py-5  lg:px-16 lg:gap-x-9  ">
         <Skills />
         <HeroContent />
       </div>
