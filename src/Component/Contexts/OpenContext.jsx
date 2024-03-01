@@ -6,11 +6,20 @@ function OpenContextProvider({ children }) {
   const [open, setOpen] = useState(false);
   const [currentIndex, setCurrentIndex] = useState(0);
 
-  const hamburgerHandler = () => setOpen(!open);
+  // const hamburgerHandler = () => setOpen(!open);
+  const hamburgerHandler = () => setOpen(true);
+  const closeHamburger = () => setOpen(false);
 
   return (
     <OpenContextData.Provider
-      value={{ open, setOpen, hamburgerHandler, currentIndex, setCurrentIndex }}
+      value={{
+        open,
+        setOpen,
+        hamburgerHandler,
+        closeHamburger,
+        currentIndex,
+        setCurrentIndex,
+      }}
     >
       {children}
     </OpenContextData.Provider>

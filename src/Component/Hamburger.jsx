@@ -1,18 +1,21 @@
 import useOpenContext from "./Contexts/useOpenContext";
 
 function Hamburger() {
-  const { open, hamburgerHandler } = useOpenContext();
+  const { open, hamburgerHandler, closeHamburger } = useOpenContext();
   return (
     <div
-      onClick={hamburgerHandler}
-      className="lg:w-26 flex items-center justify-end cursor-pointer lg:border lg:border-content-color lg:rounded-[8px] lg:py-1 lg:px-3"
+      onMouseEnter={hamburgerHandler}
+      onClick={closeHamburger}
+      className={`lg:w-26 flex items-center justify-end cursor-pointer lg:border lg:border-content-color lg:rounded-[8px] lg:py-1 lg:px-3 ${
+        open ? "lg:border-second-logo-color" : "lg:border-content-color"
+      } `}
     >
       <h4
         className={`hidden  font-bold font-Helvetica leading-10 text-lg lg:block ${
           open ? "text-second-logo-color" : "text-content-color"
         }`}
       >
-        {open ? "CLOSE" : "MENU"}
+        {open ? "Close" : "Menu"}
       </h4>
       <span className={open ? "text-second-logo-color" : "text-content-color"}>
         {open ? (

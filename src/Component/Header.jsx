@@ -2,6 +2,7 @@ import Logo from "./Logo";
 import Hamburger from "./Hamburger";
 import useOpenContext from "./Contexts/useOpenContext";
 import Nav from "./Nav";
+import DownlaodCv from "./DownlaodCv";
 
 function Header() {
   const { open, HamburgerHandler } = useOpenContext();
@@ -9,7 +10,7 @@ function Header() {
 
   return (
     <div
-      className={`fixed z-50 w-full top-0 ${
+      className={`fixed z-50 w-full left-0 right-0  mx-auto top-0 ${
         open
           ? "bg-user-color"
           : "shadow-lg shadow-[#7FB5E61F]-400 bg-plain-white"
@@ -24,7 +25,12 @@ py-6 px-4  md:px-12 lg:py-6 lg:px-16  relative top-0  ${
 `}
       >
         <Logo />
-        <Hamburger handler={HamburgerHandler} />
+        <div className="flex  items-center justify-center gap-x-0 lg:gap-x-8">
+          <div className="hidden lg:block">
+            <DownlaodCv />
+          </div>
+          <Hamburger handler={HamburgerHandler} />
+        </div>
       </div>
       <div className="w-full  lg:w-full lg:mx-auto">
         <div

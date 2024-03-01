@@ -5,9 +5,11 @@ function ProjectCards() {
   const projectArray = [
     {
       title: "BES",
-      subTitle: ["Web App", "Mobile App"],
-      text: "BES  is a web app that provides range of engineering services with professionalism and expertise. BES  is a web app that provides range of engineering services with professionalism and expertise ",
+      // subTitle: ["Web App", "Mobile App"],
+      subTitle: [" Responsive Web", ""],
+      text: "BES  is a website that provides range of engineering services with professionalism and expertise. BES  is a web app that provides range of engineering services with professionalism and expertise ",
       cardImg: ["../bespro1.png", "../bespro2.png", "../bespro3.png"],
+      logoImg: "../flapcoop.png",
       link: (
         <svg
           width="16"
@@ -40,14 +42,15 @@ function ProjectCards() {
     },
     {
       title: "flaapcop ",
-      subTitle: ["Web App", "Mobile App"],
-      text: "BES  is a web app that provides range of engineering services with professionalism and expertise. BES  is a web app that provides range of engineering services with professionalism and expertise ",
+      subTitle: ["Web ", " Mobile App"],
+      text: "Flapcoop is a web app that employs a profitable and sustainable business model. Through cooperative engagement in Real Estate, Consumer Financing, and Agricultural Value Chain sectors, it strives to make food, shelter, and asset acquisition affordable for all its members.",
       cardImg: [
         "../flapro1.png",
         "../flappro2.png",
         "../flapro3.png",
         "../flapro4.png",
       ],
+      logoImg: "../flapcoop.png",
       link: (
         <svg
           width="16"
@@ -81,7 +84,7 @@ function ProjectCards() {
   ];
 
   return (
-    <div className="w-full flex flex-col py-5 lg:flex-col-reverse ">
+    <div className="w-full flex flex-col pt-5 pb-0 lg:flex-col-reverse ">
       {projectArray.map((each, i) => (
         <ProjectCard each={each} projectType={i} key={each.title} />
       ))}

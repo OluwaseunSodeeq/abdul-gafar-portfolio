@@ -1,19 +1,13 @@
 import { useState } from "react";
 
-function HeroContent() {
-  const [current, setCurrent] = useState(false);
+function HeroContent({ breakPoint }) {
+  const [current, setCurrent] = useState(null);
 
-  const falseFunction = () => {
-    setCurrent(false);
-  };
-  console.log(falseFunction, current);
-
-  function handleItemClicked(item) {
-    setCurrent(item.heading);
-  }
   // UI DATA
+
   const cardsContent = [
     {
+      id: 0,
       icon: (
         <svg
           width="24"
@@ -63,6 +57,7 @@ function HeroContent() {
       text: "In January 2023, I embarked on a transformative journey into the world of UI/UX (product design) at EISOFT. With unwavering dedication and a series of rigorous assignments, I earned my place as a paying intern by October 2023. Since then, I've channeled my skills and expertise into meaningful contributions to the company's projects, enriching my professional journey with every step",
     },
     {
+      id: 1,
       icon: (
         <svg
           width="24"
@@ -102,48 +97,58 @@ function HeroContent() {
         </svg>
       ),
       heading: "Education",
-      text: "i hold a national Diploma in Computer Science and am currently on the path to furthering my education with the pursuit of an HND. My commitment to learning doesnt stop there, i am dedicated to continuous self-improvement.",
+
+      text: "I proudly hold a National Diploma in Computer Science and am currently working towards an HND, demonstrating my dedication to advancing my education. My commitment to learning does not stop there, also I am deeply invested in continuous self-improvement to stay updated with the latest developments in the field.",
     },
   ];
 
+  const handleMouseEnter = (index) => {
+    setCurrent(index);
+  };
+
+  const handleMouseLeave = () => {
+    setCurrent(null);
+  };
   return (
     <div
-      className={`font-Helvetica flex flex-col items-center gap-4 py-3 lg:py-0 px-4 lg:gap-y-8 md:px-12 lg:px-0`}
+      className={`font-Helvetica flex flex-col items-center gap-4 py-3 md:py-0 px-4 lg:gap-y-[35px]   md:px-0 `}
     >
-      {cardsContent.map((each) => (
+      {cardsContent.map((each, i) => (
         <div
-          onMouseEnter={() => {
-            handleItemClicked(each);
-          }}
-          onMouseLeave={falseFunction}
+          // onMouseLeave={breakPoint && setCurrent(false)}
+          onMouseLeave={handleMouseLeave}
+          onMouseEnter={() => handleMouseEnter(i)}
           key={each.heading}
-          // className="py-4 px-6 rounded-lg bg-second-logo-text shadow-2xl lg:w-[886px] lg:h-auto lg:text-left"
-          className={`py-4 px-6 rounded-lg  shadow-custom lg:max-w-[886px] lg:h-auto lg:text-left   cursor-pointer
-            bg-plain-white text-content-color
-              hover:bg-content-color hover:text-plain-white
+          className={`py-4  px-6 rounded-lg  lg:shadow-custom lg:w-[880px] lg:max-w-[886px] lg:h-auto lg:text-left lg:cursor-pointer bg-plain-white text-content-color
+           ${
+             breakPoint && current === i
+               ? "hover:bg-content-color hover:text-plain-white"
+               : ""
+           }
           `}
         >
           <div className=" h-11 flex justify-start gap-2 items-center lg:items-start  lg:h-16 lg:flex-col text-inherit ">
             <div
-              className={` ${
-                current === each.heading
-                  ? " stroke-plain-white"
-                  : " stroke-content-color"
-              }`}
+              className={`
+                ${
+                  breakPoint && current === i
+                    ? "stroke-plain-white"
+                    : " stroke-content-color"
+                }`}
             >
               {each.icon}
             </div>
             <h3
-              className={` font-normal text-xl  leading-9 lg:leading-7  ${
-                current === each.heading
-                  ? " text-plain-white"
-                  : " text-user-color"
+              className={`font-normal text-xl  leading-9 lg:leading-7   ${
+                breakPoint && current === i
+                  ? "text-plain-white"
+                  : "  text-user-color"
               }`}
             >
               {each.heading}
             </h3>
           </div>
-          <p className="font-bold text-sm md:text-base leading-9 lg:leading-10 text-inherit">
+          <p className="font-normal text-sm md:text-base leading-9 lg:leading-10 text-inherit">
             {each.text}
           </p>
         </div>
@@ -153,3 +158,10 @@ function HeroContent() {
 }
 
 export default HeroContent;
+/* 
+ //  ${
+            //    breakPoint
+            //      ? "bg-plain-white text-content-color"
+            //      : "text-plain-white bg-content-color"
+            //  }
+*/

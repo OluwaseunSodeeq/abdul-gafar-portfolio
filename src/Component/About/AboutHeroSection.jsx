@@ -39,13 +39,13 @@ function AboutHeroSection() {
             {aboutContent.map((each, i) => (
               <p
                 key={i}
-                className="pt-4 font-normal font-Helvetica text-sm leading-6 italic lg:text-2xl md:text-xl text-user-color"
+                className="pt-4 font-normal font-Helvetica text-sm leading-6 italic lg:text-2xl md:text-xl text-content-color"
               >
                 {each}
               </p>
             ))}
           </div>
-          <p className="pt-4 font-normal font-Helvetica text-sm leading-6 italic lg:text-2xl md:text-xl text-user-color">
+          <p className="pt-4 font-normal font-Helvetica text-sm leading-6 italic lg:text-2xl md:text-xl text-content-color">
             Email: Gafarj544@gmail.com
           </p>
         </div>

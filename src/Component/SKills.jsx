@@ -1,16 +1,15 @@
 import { useState } from "react";
 
-function Skills() {
-  const [ui, setUi] = useState(false);
-
+function Skills({ breakPoint }) {
+  const [ui, setUi] = useState(null);
   const trueFunction = () => {
-    console.log("hello");
     setUi(true);
   };
+
   const falseFunction = () => {
-    console.log("hello");
-    setUi(false);
+    setUi(null);
   };
+
   const skillsArray = [
     "Mobile App Design",
     "Web Design",
@@ -30,13 +29,15 @@ function Skills() {
   return (
     <div className="py-3 lg:py-0 lg:px-0 px-4 md:px-12 ">
       <div
-        className={`lg:w-80 relative cursor-pointer  py-2 px-6  shadow-custom rounded-[12px] text-content-color hover:bg-content-color hover:text-plain-white`}
+        className={`lg:w-80 relative lg:cursor-pointer  py-2 px-6  lg:shadow-custom rounded-[12px] text-content-color ${
+          breakPoint ? "hover:bg-content-color hover:text-plain-white" : ""
+        }`}
         onMouseEnter={trueFunction}
         onMouseLeave={falseFunction}
       >
         <p
-          className={`font-normal font-Helvetica lg:text-3xl text-xl  leading-8 ${
-            ui === true ? "text-plain-white" : "text-user-color"
+          className={` font-Helvetica font-[400] text-[20px] leading-8 md:text-[25px] lg:leading-[44px] lg:text-[30px]${
+            ui && breakPoint ? "text-plain-white" : "text-user-color"
           }`}
         >
           Skills
@@ -47,7 +48,7 @@ function Skills() {
             <div key={each} className=" flex gap-2  items-center lg:mt-1.5 ">
               <div
                 className={` md:w-2 md:h-2  w-1.5 h-1.5 border rounded-full ${
-                  ui === true ? "bg-plain-white" : "bg-content-color"
+                  breakPoint && ui ? "bg-plain-white" : "bg-content-color"
                 }`}
               ></div>
               <p className="font-bold font-Helvetica text-sm md:text-base text-inherit leading-9 px-2">

@@ -29,7 +29,7 @@ function InputType({ each }) {
         style={{
           fontFamily: "Helvetica",
           fontSize: "16px",
-          fontWeight: 700,
+          fontWeight: 400,
           lineHeight: "26px",
           letterSpacing: "0.08em",
           textAlign: "left",
