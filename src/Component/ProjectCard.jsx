@@ -32,9 +32,7 @@ function ProjectCard({ each, projectType }) {
       <>
         <ul className="slick-dots"></ul>
         <ul
-          className={`flex justify-center items-center absolute w-[80px] px-[10px] h-[15px] md:w-[88px] md:h-[26px]  gap-x-2 rounded-[12px] bottom-[10px] md:bottom-[-40px] lg:bottom-[-50px] inset-x-0 mx-auto left-0 right-0 cursor-not-allowed ${
-            projectType === 0 ? "bg-user-color" : "bg-[#67696E]"
-          }`}
+          className={`flex justify-center items-center absolute w-[80px] px-[10px] h-[15px] md:w-[88px] md:h-[26px]  gap-x-2 rounded-[12px] bottom-[10px] md:bottom-[-40px] lg:bottom-[-33px] inset-x-0 mx-auto left-0 right-0 cursor-not-allowed `}
         >
           {dots.map((dot, index) => (
             <li
@@ -57,22 +55,19 @@ function ProjectCard({ each, projectType }) {
     <div
       className={
         projectType === 0
-          ? "w-full px-6  md:px-12 lg:px-6 py-4 bg-bes-bg lg:flex lg:flex-row-reverse lg:justify-center gap-9"
-          : "w-full px-6  md:px-12 lg:px-6 py-4 bg-second-logo-text lg:flex lg:flex-row lg:justify-center gap-9"
+          ? "w-full px-6  md:px-12 lg:px-6 py-4 bg-bes-bg lg:flex lg:flex-row-reverse lg:justify-center gap-9 lg:py-[48px]  "
+          : "w-full px-6  md:px-12 lg:px-6 py-4 bg-second-logo-text lg:flex lg:flex-row lg:justify-center gap-9 lg:py-[48px]"
       }
     >
       <div>
-        <div className="font-roboto lg:w-[590px] lg:h-[550px] lg:pt-5">
-          {/* <h3
-            className={
-              projectType === 0
-                ? "font-bold font-roboto text-2xl leading-7 text-card2-color lg:text-5xl"
-                : "font-bold font-roboto text-2xl leading-7 text-content-color lg:text-5xl"
-            }
-          >
-            {each.title}
-          </h3> */}
-          <img src="../flapcoop.png" alt=" site logo" />
+        <div className="font-roboto md:w-[596px] md:h-[500px] ">
+          <div className="lg:pt-[24px]">
+            <img
+              src={each.logoImg}
+              className={` ${projectType === 0 ? " w-[]70px] h-[70px]" : ""}`}
+              alt=" site logo"
+            />
+          </div>
           <div className=" flex items-center gap-2 mt-2 md:mt-1 lg:mt-4">
             <span className="text-sm leading-6 text-sub-text font-outfit font-normal lg:text-base">
               {each.subTitle[0]}
@@ -87,9 +82,12 @@ function ProjectCard({ each, projectType }) {
           </p>
         </div>
         <div
-          className={`hidden lg:flex  gap-2 items-center justify-start lg:-mt-20  lg:text-base lg:cursor-pointer hover:bg-plain-white p-2 max-w-[140px] md:max-w-[153px] lg:py-4 lg:px-5  rounded-md lg:rounded-[8px] ${
-            projectType === 0 ? "bg-bes-bg" : "bg-second-logo-text"
-          }  `}
+          className={`hidden lg:flex  gap-1 items-center justify-start lg:-mt-20 lg:w-[135px]  lg:text-base lg:cursor-pointer  p-2 lg:py-2 lg:px-4  rounded-md lg:rounded-[8px]
+            ${
+              projectType === 0
+                ? "bg-bes-bg hover:bg-[#e5fbe8]"
+                : "bg-second-logo-text hover:bg-[#f7f7f7]"
+            }  `}
         >
           <span
             className={
@@ -103,14 +101,20 @@ function ProjectCard({ each, projectType }) {
           <span>{each.link}</span>
         </div>
       </div>
-      <div className="mt-5 w-full h-[350px] md:w-[590px] md:h-[550px]  relative ">
+      <div className="mt-5 w-full h-[350px] md:w-[596px] md:h-[524px] md:mt-0  relative  ">
         <div
-          className={` relative px-6  md:px-10 md:py-16  lg:px-12 lg:py-20 rounded-[24px]
+          className={` relative px-6  md:px-10 md:py-16  lg:px-12 lg:pt-[72px] lg:pb-[48px] rounded-[24px] 
             ${projectType === 0 ? " bg-card2-color" : " bg-[#8C98A1]"}`}
         >
           <div className="relative">
             <div className="w-[98px] h-[18px] md:w-auto md:h-auto absolute left-1/2 transform -translate-x-1/2 top-[8px] md:top-[-47px] lg:top-[-52px]">
-              <img src={each.logoImg} alt=" site logo" />
+              <img
+                className={` ${
+                  projectType === 0 ? " w-[60px] h-[60px] lg:mt-[-15px]" : ""
+                }`}
+                src={each.logoImg}
+                alt=" site logo"
+              />
             </div>
             <Slider {...settings}>
               {each.cardImg.map((each, i) => {

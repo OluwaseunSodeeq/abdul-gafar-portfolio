@@ -5,10 +5,9 @@ const OpenContextData = createContext();
 function OpenContextProvider({ children }) {
   const [open, setOpen] = useState(false);
   const [currentIndex, setCurrentIndex] = useState(0);
+  const hamburgerHandler = () => setOpen(!open);
 
-  // const hamburgerHandler = () => setOpen(!open);
-  const hamburgerHandler = () => setOpen(true);
-  const closeHamburger = () => setOpen(false);
+  const closeHamburger = (e) => setOpen(false);
 
   return (
     <OpenContextData.Provider

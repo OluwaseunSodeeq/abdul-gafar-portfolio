@@ -5,11 +5,15 @@ function ProjectCards() {
   const projectArray = [
     {
       title: "BES",
-      // subTitle: ["Web App", "Mobile App"],
-      subTitle: [" Responsive Web", ""],
+      subTitle: ["Responsive Web", ""],
       text: "BES  is a website that provides range of engineering services with professionalism and expertise. BES  is a web app that provides range of engineering services with professionalism and expertise ",
-      cardImg: ["../bespro1.png", "../bespro2.png", "../bespro3.png"],
-      logoImg: "../flapcoop.png",
+      cardImg: [
+        "../bespro1.png",
+        "../bespro2.png",
+        "../bespro3.png",
+        "../bespro4.png",
+      ],
+      logoImg: "../BESLOGO.svg",
       link: (
         <svg
           width="16"
@@ -84,7 +88,7 @@ function ProjectCards() {
   ];
 
   return (
-    <div className="w-full flex flex-col pt-5 pb-0 lg:flex-col-reverse ">
+    <div className="w-full flex flex-col pt-5 pb-0 lg:flex-col-reverse lg:pb-5 ">
       {projectArray.map((each, i) => (
         <ProjectCard each={each} projectType={i} key={each.title} />
       ))}

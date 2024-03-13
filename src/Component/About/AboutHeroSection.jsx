@@ -1,6 +1,8 @@
 import Container from "../Container";
+import useOpenContext from "../Contexts/useOpenContext";
 
 function AboutHeroSection() {
+  const { closeHamburger } = useOpenContext();
   // Ui Data
 
   const aboutContent = [
@@ -11,7 +13,7 @@ function AboutHeroSection() {
 
   const greetings = ["Hello!", "i’m Gafar!"];
   return (
-    <div className="mt-28 lg:mt-32">
+    <div className="mt-28 lg:mt-32" onClick={closeHamburger}>
       <Container>
         <div className="flex flex-col  md:flex-row md:gap-[50px] md:items-center md:justify-center  lg:gap-[104px] md:mt-[40px]">
           <h2 className="flex flex-col">

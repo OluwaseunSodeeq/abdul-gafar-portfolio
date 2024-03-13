@@ -16,7 +16,7 @@ const tailwindConfig = {
         "second-logo-text": "#FAFBFC",
         "user-color": "#333437",
         "second-logo-color": "#F2F4F6",
-        "bes-bg": "#F2FAFE",
+        "bes-bg": "#f4fdf5",
         "unactive-color": "#9A9EA5",
         "sub-text": "#9B127D",
         "card2-color": "#00703C",

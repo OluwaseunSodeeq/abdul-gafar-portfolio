@@ -1,38 +1,87 @@
-import { useState } from "react";
+import { useRef } from "react";
+
+import emailjs from "@emailjs/browser";
 import Container from "../Container";
-import InputType from "./InputType";
+// import InputType from "./InputType";
+import useOpenContext from "../Contexts/useOpenContext";
+import { useForm } from "react-hook-form";
+import Error from "../Error";
+import toast from "react-hot-toast";
 
 function ContactHeroSection() {
-  const [textAreaValue, setTextAreaValue] = useState("");
+  const form = useRef();
+
+  const { closeHamburger } = useOpenContext();
+  const textRegex = /^[A-Za-z]+(?:\s+[A-Za-z]+)*$/;
+  const emailRegex = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/;
+  const phoneRegex = /^\+(?:\d{1,3}-?){1,3}\d{1,14}$/;
+  const phoneNumLength = 14;
+
+  // const formID = "xkndzqra";
+
+  const { handleSubmit, register, reset, formState } = useForm();
+  const { isSubmitting, errors } = formState;
+  // .sendForm("service_j3m32vc", "YOUR_TEMPLATE_ID", form.current, {
+  // .sendForm("service_IDf", "template_ID", form.current, {
+  //   publicKey: "public",
+  // })
+
+  // Oluwaseun
+  // emailjs
+  //       .sendForm("service_96zrzdf", "template_oh4h3rz", form.current, {
+  //         publicKey: "KJ4AEgIoLGFKhAZ1L",
+  //       })
+
+  function onSuccess(success) {
+    console.log(success);
+    emailjs
+      .sendForm("service_sg207i4", "template_ssdy5ho", form.current, {
+        publicKey: "IaSnBealtj4XWxhLe",
+      })
+      .then(
+        () => {
+          console.log("SUCCESS!");
+        },
+        (error) => {
+          console.log("FAILED...", error.text);
+        }
+      );
+    toast.success("Form submitted successfully!");
+    reset();
+  }
+  function onError(error) {
+    console.log(error);
+    toast.error("Kindly fill the field correctly!");
+  }
 
   //  UI DATA
 
-  const inputArray = [
-    {
-      label: "Name",
-      inputType: "text",
-      placeholdertext: "Abdul-Gafar Jimoh",
-      forText: "Name",
-    },
-    {
-      label: "Email",
-      inputType: "email",
-      placeholdertext: "Gafarj544@gmail.com",
-      forText: "email",
-    },
-    {
-      label: "Phone",
-      inputType: "tel",
-      placeholdertext: "+2348123208163",
-      forText: "",
-    },
-    {
-      label: "Subject",
-      inputType: "text",
-      placeholdertext: "Design a website for my Company",
-      forText: "subject",
-    },
-  ];
+  // const inputArray = [
+  //   {
+  //     label: "Name",
+  //     inputType: "text",
+  //     placeholdertext: "Abdul-Gafar Jimoh",
+  //     forText: "Name",
+  //   },
+  //   {
+  //     label: "Email",
+  //     inputType: "email",
+  //     placeholdertext: "Gafarj544@gmail.com",
+  //     forText: "email",
+  //   },
+  //   {
+  //     label: "Phone",
+  //     inputType: "tel",
+  //     placeholdertext: "+2348123208163",
+  //     forText: "",
+  //   },
+  //   {
+  //     label: "Subject",
+  //     inputType: "text",
+  //     placeholdertext: "Design a website for my Company",
+  //     forText: "subject",
+  //   },
+  // ];
 
   const contactOptnArray = [
     {
@@ -201,16 +250,9 @@ function ContactHeroSection() {
     },
   ];
 
-  function handler(e) {
-    e.preventDefault();
-    const inputValue = e.target.value.trim();
-    // const minTexts = inputValue.split(/\s+/).length;
-
-    // if (minTexts < 3) return;
-    setTextAreaValue(inputValue);
-  }
+  // console.log(inputArray);
   return (
-    <div className="w-full h-auto mt-28 lg:mt-32">
+    <div onClick={closeHamburger} className="w-full h-auto mt-28 lg:mt-32">
       <Container>
         <div className="px-0 py-4">
           <h3 className="font-bold font-Helvetica text-2xl leading-9 tracking-widest text-logo-text lg:text-4xl lg:leading-10">
@@ -222,12 +264,147 @@ function ContactHeroSection() {
         </div>
       </Container>
       <Container>
-        <div className="  lg:border-[#CED3DC]  md:border -mt-10 md:mt-0 py-4 md:p-8 lg:p-12 lg:rounded-lg">
+        <form
+          ref={form}
+          onSubmit={handleSubmit(onSuccess, onError)}
+          className="  lg:border-[#CED3DC]  md:border -mt-10 md:mt-0 py-4 md:p-8 lg:p-12 lg:rounded-lg"
+        >
           <div className=" md:flex md:justify-between md:flex-wrap ">
-            <InputType each={inputArray[0]} />
+            {/* Name */}
+            <div className="px-0 py-4  md:w-[280px] lg:max-w-[500px] lg:w-[570px] lg:h-36 ">
+              <label
+                htmlFor="from_name"
+                className="font-bold font-Helvetica leading-8 text-xl tracking-widest"
+              >
+                Name
+              </label>
+              <input
+                id="from_name"
+                type="text"
+                className=" bg-transparent border-b border-[#CECFD1] w-full mt-6 pb-1 pt-2 outline-none"
+                placeholder="Abdul-Gafar Jimoh"
+                style={{
+                  fontFamily: "Helvetica",
+                  fontSize: "16px",
+                  fontWeight: 400,
+                  lineHeight: "26px",
+                  letterSpacing: "0.08em",
+                  textAlign: "left",
+                  outlineColor: errors.from_name ? "red" : "",
+                }}
+                {...register("from_name", {
+                  required: "This field is required",
+                  validate: (value) =>
+                    (value.trim() && textRegex.test(value)) ||
+                    "Please enter only letters (no numbers or symbols).",
+                })}
+              />
+              {errors?.name?.message && <Error>{errors.name.message}</Error>}
+            </div>
+
+            {/* Email */}
+
+            <div className="px-0 py-4  md:w-[280px] lg:max-w-[500px] lg:w-[570px] lg:h-36 ">
+              <label
+                htmlFor="from_email"
+                className="font-bold font-Helvetica leading-8 text-xl tracking-widest"
+              >
+                Email
+              </label>
+              <input
+                id="from_email"
+                type="text"
+                className=" bg-transparent border-b border-[#CECFD1] w-full mt-6 pb-1 pt-2 outline-none"
+                placeholder="Abdul-Gafar Jimoh"
+                style={{
+                  fontFamily: "Helvetica",
+                  fontSize: "16px",
+                  fontWeight: 400,
+                  lineHeight: "26px",
+                  letterSpacing: "0.08em",
+                  textAlign: "left",
+                  outlineColor: errors.from_email ? "red" : "",
+                }}
+                {...register("from_email", {
+                  required: "This field is required",
+
+                  validate: (value) =>
+                    (value.trim().endsWith("@gmail.com") && emailRegex) ||
+                    "Please input a valid email.",
+                })}
+              />
+              {errors?.email?.message && <Error>{errors.email.message}</Error>}
+            </div>
+            {/* Phone */}
+            <div className="px-0 py-4  md:w-[280px] lg:max-w-[500px] lg:w-[570px] lg:h-36 ">
+              <label
+                htmlFor="name"
+                className="font-bold font-Helvetica leading-8 text-xl tracking-widest"
+              >
+                Phone
+              </label>
+              <input
+                id="phone"
+                type="tel"
+                className=" bg-transparent border-b border-[#CECFD1] w-full mt-6 pb-1 pt-2 outline-none"
+                placeholder="+2348123208163"
+                style={{
+                  fontFamily: "Helvetica",
+                  fontSize: "16px",
+                  fontWeight: 400,
+                  lineHeight: "26px",
+                  letterSpacing: "0.08em",
+                  textAlign: "left",
+                  outlineColor: errors.phone ? "red" : "",
+                }}
+                {...register("phone", {
+                  required: "This field is required",
+                  validate: (value) =>
+                    (value.trim() &&
+                      phoneRegex.test(value) &&
+                      value.length === phoneNumLength) ||
+                    "Please enter a valid phone number",
+                })}
+              />
+              {errors?.phone?.message && <Error>{errors.phone.message}</Error>}
+            </div>
+            {/* Subject */}
+            <div className="px-0 py-4  md:w-[280px] lg:max-w-[500px] lg:w-[570px] lg:h-36 ">
+              <label
+                htmlFor="subject"
+                className="font-bold font-Helvetica leading-8 text-xl tracking-widest"
+              >
+                Subject
+              </label>
+              <input
+                id="subject"
+                type="text"
+                className=" bg-transparent border-b border-[#CECFD1] w-full mt-6 pb-1 pt-2 outline-none"
+                placeholder="Design a website for my Company"
+                style={{
+                  fontFamily: "Helvetica",
+                  fontSize: "16px",
+                  fontWeight: 400,
+                  lineHeight: "26px",
+                  letterSpacing: "0.08em",
+                  textAlign: "left",
+                  outlineColor: errors.subject ? "red" : "",
+                }}
+                {...register("subject", {
+                  required: "This field is required",
+                  validate: (value) =>
+                    (value.trim() && textRegex.test(value)) ||
+                    "Please enter only letters (no numbers or symbols).",
+                })}
+              />
+              {errors?.subject?.message && (
+                <Error>{errors.subject.message}</Error>
+              )}
+            </div>
+            {/* <InputType each={inputArray[0]} />
             <InputType each={inputArray[1]} />
             <InputType each={inputArray[2]} />
-            <InputType each={inputArray[3]} />
+            <InputType each={inputArray[3]} /> */}
           </div>
 
           <div className="px-0 py-4  lg:w-full lg:px-0">
@@ -238,9 +415,7 @@ function ContactHeroSection() {
               Leave me a message
             </label>
             <textarea
-              id="usertextAreaValue"
-              value={textAreaValue}
-              onChange={handler}
+              id="message"
               className="border-b border-[#CECFD1] w-full mt-8 pb-0 pt-2 lg:w-full lg:h-20 bg-transparent outline-none "
               placeholder="I saw your portfolio on linkedln. Looks Great! Let”s schedule a call"
               style={{
@@ -250,13 +425,25 @@ function ContactHeroSection() {
                 lineHeight: "26px",
                 letterSpacing: "0.08em",
                 textAlign: "left",
+                outlineColor: errors.message ? "red" : "",
               }}
+              {...register("message", {
+                required: "This field is required",
+                minLength: {
+                  value: 4,
+                  message: "This field cannot be empty",
+                },
+              })}
+              // className="w-full bg-text-color-two mt-2 lg:h-[150px]"
             />
+            {errors?.message?.message && (
+              <Error>{errors.message.message}</Error>
+            )}
           </div>
           <button className=" block font-Helvetica font-medium leading-7 text-base md:text-lg lg:text-xl py-1 px-2 md:p-2 lg:py-3 lg:px-4 text-content-color border-user-color border-2 rounded-lg md:mt-[40px] lg:mt-[90px] hover:border-none hover:bg-unactive-color  hover:text-plain-white">
-            Send message
+            {isSubmitting ? "Submitting" : "Send message"}
           </button>
-        </div>
+        </form>
       </Container>
       <Container>
         <div className="hidden lg:block">
@@ -283,3 +470,23 @@ function ContactHeroSection() {
 }
 
 export default ContactHeroSection;
+/*
+Hello Abdul Gafar Jimoh,
+
+You got a new message from {{from_name}}:
+
+Subject:{{subject}}
+
+
+From : {{from_name}}
+
+Email: {{from_email}}
+
+Phone: {{phone}}
+
+Message: {{message}}
+
+Best wishes,
+EmailJS team
+
+*/

@@ -4,16 +4,12 @@ import HeroContent from "../Component/HeroContent";
 import HomepageHeroSection from "../Component/HomepageHeroSection";
 import ProjectCards from "../Component/ProjectCards";
 import Skills from "../Component/SKills";
-import useOpenContext from "../Component/Contexts/useOpenContext";
+// import useOpenContext from "../Component/Contexts/useOpenContext";
 
 function Homepage() {
   const breakPoint = useMediaQuery({ minWidth: 1024 });
-  const { closeHamburger } = useOpenContext();
   return (
-    <div
-      className="relative lg:w-full lg:max-w-[1440px]  bg-plain-white "
-      onClick={closeHamburger}
-    >
+    <div className="relative lg:w-full lg:max-w-[1440px]  bg-plain-white pt-0">
       <Header />
       <HomepageHeroSection />
       {/* <div className="lg-full lg:flex lg:justify-between  py-5  lg:px-16 lg:gap-x-[24px] "> */}

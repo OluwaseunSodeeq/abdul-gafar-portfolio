@@ -21,7 +21,7 @@ function Logo() {
         </div> */}
 
         <div className="w-[50px] h-[50px] md:w-[70px] md:h-[70px]  ">
-          <img src="../logoPic.png" alt="logo" className="w-full h-full" />
+          <img src="../tryLogo.svg" alt="logo" className="w-full h-full" />
         </div>
         <div className="p-0 font-Helvetica">
           <h4

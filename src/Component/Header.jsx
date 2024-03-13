@@ -6,20 +6,18 @@ import DownlaodCv from "./DownlaodCv";
 
 function Header() {
   const { open, HamburgerHandler } = useOpenContext();
-  // console.log(open);
 
   return (
     <div
-      className={`fixed z-50 w-full left-0 right-0  mx-auto top-0 ${
+      className={`fixed z-50 w-full left-0 right-0  mx-auto top-[0px] ${
         open
           ? "bg-user-color"
           : "shadow-lg shadow-[#7FB5E61F]-400 bg-plain-white"
       }`}
     >
       <div
-        className={`w-full lg:max-w-[1440px]  md:mx-auto  overflow-hidden 
-h-20 md:h-28 lg:h-32 flex justify-between items-center  border-red 
-py-6 px-4  md:px-12 lg:py-6 lg:px-16  relative top-0  ${
+        className={`w-full h-20 md:h-28 lg:h-32 flex justify-between items-center  
+py-6 px-4  md:px-12 lg:py-6 lg:px-16  relative top-0   ${
           open ? " duration-500 ease-in-out" : " duration-500 ease-in-out"
         }      
 `}
@@ -36,8 +34,8 @@ py-6 px-4  md:px-12 lg:py-6 lg:px-16  relative top-0  ${
         <div
           className={`duration-300 ease-in-out  ${
             open
-              ? "  relative  z-30 translate-x-0    "
-              : " relative  z-30 translate-x-full  "
+              ? "  relative  z-30 translate-x-0"
+              : " relative  z-30 translate-x-full"
           }`}
         >
           <Nav />
