@@ -1,14 +1,12 @@
 import { BrowserRouter, Route, Routes } from "react-router-dom";
 import { Suspense, lazy } from "react";
 
-import Footer from "./Component/Footer/Footer";
-// import AboutMe from "./Pages/AboutMe";
-// import Contact from "./Pages/Contact";
-// import Homepage from "./Pages/Homepage";
+// import Footer from "./Component/Footer/Footer";
+
 import { OpenContextProvider } from "./Component/Contexts/OpenContext";
 import { Toaster } from "react-hot-toast";
+// import { LoaderIcon, Toaster } from "react-hot-toast";
 import Loader from "./Component/Loader";
-// import OpenContextProvider from "./Component/Contexts/OpenContext";
 
 const Homepage = lazy(() => import("./Pages/Homepage"));
 const AboutMe = lazy(() => import("./Pages/AboutMe"));
@@ -48,7 +46,7 @@ function App() {
             },
           }}
         />
-        <Footer />
+        {/* <Footer /> */}
       </OpenContextProvider>
     </div>
   );

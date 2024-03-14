@@ -45,7 +45,7 @@ function HomepageHeroSection() {
           </div>
           <p className=" bg-plain-white font-normal text-sm md:text-lg lg:text-2xl leading-4 text-user-color text-center mt-1 md:mt-2">
             Available for <span className="font-bold">Hire</span> and
-            <span className="font-bold">Freelance</span>
+            <span className="font-bold"> Freelance</span>
           </p>
           <div className="w-full h-[30px] bg-plain-white"></div>
         </div>

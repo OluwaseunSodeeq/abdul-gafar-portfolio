@@ -23,19 +23,19 @@ function Nav() {
       title: "Linkedin",
       link: "https://www.linkedin.com/in/jimoh-gafar-63a51627a?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=ios_app",
     },
-    { id: 4, title: "Dribble", link: "https://dribbble.com/Abdulgafarr" },
+    { id: 5, title: "Dribble", link: "https://dribbble.com/Abdulgafarr" },
     {
-      id: 5,
+      id: 6,
       title: "Twitter",
       link: "https://x.com/moore__g?s=11&t=_L--Oyl2Z7pW4eps0BUNnQ",
     },
-    { id: 6, title: "Behance", link: "https://www.behance.net/jimohgafar" },
+    { id: 7, title: "Behance", link: "https://www.behance.net/jimohgafar" },
     // {id:0,title:"Home",}
   ];
   return (
     // <Container>
 
-    <div>
+    <div className="border border-user-color">
       {/* {breakpointsNav && <Header />} */}
       <div className=" w-full mx-auto  bg-user-color absolute z-30  ">
         <ul
@@ -207,6 +207,34 @@ function Nav() {
                 )}
                 <span className="transition duration-300 ease-out hover:text-second-logo-text tracking-wide hover:tracking-widest">
                   {navsLinks[6].title}
+                </span>
+              </h3>
+            </NavLink>
+          </li>
+          <li
+            // key={id[0]}
+            className={`font-bold font-Helvetica text-[32px] leading-[48px]  ${
+              navsLinks[7].id === currentIndex
+                ? "text-second-logo-text"
+                : "text-unactive-color"
+            }`}
+          >
+            <NavLink
+              onClick={() => closeHandler(navsLinks[7].id)}
+              to={navsLinks[7].link}
+            >
+              <h3
+                className={`flex gap-x-1 items-center ${
+                  navsLinks[7].id === currentIndex
+                    ? "ml-[-40px] md:ml-[-60px] lg:ml-[-80px]"
+                    : ""
+                }`}
+              >
+                {navsLinks[7].id === currentIndex && (
+                  <div className="w-[40px] h-[4px] md:w-[60px] lg:w-[80px] lg:h-[8px] bg-second-logo-color"></div>
+                )}
+                <span className="transition duration-300 ease-out hover:text-second-logo-text tracking-wide hover:tracking-widest">
+                  {navsLinks[7].title}
                 </span>
               </h3>
             </NavLink>

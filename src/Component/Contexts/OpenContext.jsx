@@ -1,12 +1,11 @@
 import { createContext, useState } from "react";
 
-const OpenContextData = createContext();
+const OpenContextData = createContext(null);
 
 function OpenContextProvider({ children }) {
   const [open, setOpen] = useState(false);
   const [currentIndex, setCurrentIndex] = useState(0);
   const hamburgerHandler = () => setOpen(!open);
-
   const closeHamburger = (e) => setOpen(false);
 
   return (

@@ -14,6 +14,7 @@ function ProjectCards() {
         "../bespro4.png",
       ],
       logoImg: "../BESLOGO.svg",
+      url: "https://bes-beta.vercel.app/",
       link: (
         <svg
           width="16"
@@ -55,6 +56,7 @@ function ProjectCards() {
         "../flapro4.png",
       ],
       logoImg: "../flapcoop.png",
+      url: "https://bes-beta.vercel.app/",
       link: (
         <svg
           width="16"

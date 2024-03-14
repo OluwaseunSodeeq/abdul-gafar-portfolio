@@ -2,6 +2,7 @@ import "../styles.css";
 import Slider from "react-slick";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
+import { Link } from "react-router-dom";
 
 function ProjectCard({ each, projectType }) {
   const startIcon = (
@@ -55,16 +56,21 @@ function ProjectCard({ each, projectType }) {
     <div
       className={
         projectType === 0
-          ? "w-full px-6  md:px-12 lg:px-6 py-4 bg-bes-bg lg:flex lg:flex-row-reverse lg:justify-center gap-9 lg:py-[48px]  "
-          : "w-full px-6  md:px-12 lg:px-6 py-4 bg-second-logo-text lg:flex lg:flex-row lg:justify-center gap-9 lg:py-[48px]"
+          ? "w-full h-auto px-6  md:px-12 lg:px-6 py-4 bg-bes-bg lg:flex lg:flex-row-reverse lg:justify-center gap-9  md:py-[34px] lg:py-[48px]  "
+          : "w-full h-auto px-6  md:px-12 lg:px-6 py-4 bg-second-logo-text lg:flex lg:flex-row lg:justify-center gap-9 md:py-[34px] lg:py-[48px]"
       }
     >
       <div>
-        <div className="font-roboto md:w-[596px] md:h-[500px] ">
+        {/* <div className="font-roboto md:w-[596px] md:h-[500px] "> */}
+        <div
+          className={`font-roboto md:w-[596px] ${
+            projectType === 0 ? "lg:h-[450px]" : "lg:h-[500px]"
+          }`}
+        >
           <div className="lg:pt-[24px]">
             <img
               src={each.logoImg}
-              className={` ${projectType === 0 ? " w-[]70px] h-[70px]" : ""}`}
+              className={` ${projectType === 0 ? " w-[70px] h-[70px]" : ""}`}
               alt=" site logo"
             />
           </div>
@@ -81,27 +87,30 @@ function ProjectCard({ each, projectType }) {
             {each.text}
           </p>
         </div>
-        <div
-          className={`hidden lg:flex  gap-1 items-center justify-start lg:-mt-20 lg:w-[135px]  lg:text-base lg:cursor-pointer  p-2 lg:py-2 lg:px-4  rounded-md lg:rounded-[8px]
+        <Link to={each.url}>
+          <div
+            className={`hidden lg:flex  gap-1 items-center justify-start lg:-mt-20 lg:w-[135px]  lg:text-base lg:cursor-pointer  p-2 lg:py-2 lg:px-4  rounded-md lg:rounded-[8px]
             ${
               projectType === 0
                 ? "bg-bes-bg hover:bg-[#e5fbe8]"
                 : "bg-second-logo-text hover:bg-[#f7f7f7]"
             }  `}
-        >
-          <span
-            className={
-              projectType === 0
-                ? "text-card2-color font-bold text-sm leading-6 font-Helvetica "
-                : "text-[#8C98A1] font-bold text-sm leading-6 font-Helvetica"
-            }
           >
-            Vist Website
-          </span>
-          <span>{each.link}</span>
-        </div>
+            <span
+              className={
+                projectType === 0
+                  ? "text-card2-color font-bold text-sm leading-6 font-Helvetica "
+                  : "text-[#8C98A1] font-bold text-sm leading-6 font-Helvetica"
+              }
+            >
+              Vist Website
+            </span>
+            <span>{each.link}</span>
+          </div>
+        </Link>
       </div>
-      <div className="mt-5 w-full h-[350px] md:w-[596px] md:h-[524px] md:mt-0  relative  ">
+      {/* <div className="mt-5 w-full  md:w-[596px] md:h-[524px] md:mt-0  relative  "> */}
+      <div className="mt-5 w-full  md:w-[596px]  md:mt-10  lg:mt-0 relative  ">
         <div
           className={` relative px-6  md:px-10 md:py-16  lg:px-12 lg:pt-[72px] lg:pb-[48px] rounded-[24px] 
             ${projectType === 0 ? " bg-card2-color" : " bg-[#8C98A1]"}`}
@@ -110,7 +119,9 @@ function ProjectCard({ each, projectType }) {
             <div className="w-[98px] h-[18px] md:w-auto md:h-auto absolute left-1/2 transform -translate-x-1/2 top-[8px] md:top-[-47px] lg:top-[-52px]">
               <img
                 className={` ${
-                  projectType === 0 ? " w-[60px] h-[60px] lg:mt-[-15px]" : ""
+                  projectType === 0
+                    ? "  w-[40px] h-[40px]  lg:w-[60px] lg:h-[60px] mx-auto mt-[8px] md:mt-[-4px] lg:mt-[-13px]"
+                    : "mt-[20px] md:mt-[0px]"
                 }`}
                 src={each.logoImg}
                 alt=" site logo"
@@ -125,7 +136,8 @@ function ProjectCard({ each, projectType }) {
                   >
                     <img
                       key={i}
-                      className="w-full h-[280px] py-[30px] md:py-0 md:w-full md:h-full cursor-grab rounded-xl"
+                      // className="w-full h-[280px] py-[30px] md:py-0 md:w-full md:h-full cursor-grab rounded-xl"
+                      className="w-full h-[330px] pt-[70px] pb-[30px] md:py-0 md:w-full md:h-full cursor-grab rounded-xl"
                       src={each}
                       alt="projects"
                     />
@@ -135,18 +147,27 @@ function ProjectCard({ each, projectType }) {
             </Slider>
           </div>
         </div>
-        <div className="cursor-pointer flex gap-2 items-center justify-end mt-8 lg:hidden  ">
-          <span
-            className={
+        <Link to={each.url}>
+          <div
+            className={`cursor-pointer flex gap-2 items-center justify-end mt-8 max-w-[135px]  text-nowrap lg:hidden  "
+            ${
               projectType === 0
-                ? "text-card2-color font-bold text-sm leading-6 font-Helvetica"
-                : "text-[#8C98A1] font-bold text-sm leading-6 font-Helvetica"
-            }
+                ? "bg-bes-bg hover:bg-[#e5fbe8]"
+                : "bg-second-logo-text hover:bg-[#f7f7f7]"
+            }  `}
           >
-            Vist Website
-          </span>
-          <span>{each.link}</span>
-        </div>
+            <span
+              className={
+                projectType === 0
+                  ? "text-card2-color font-bold text-sm leading-6 font-Helvetica "
+                  : "text-[#8C98A1] font-bold text-sm leading-6 font-Helvetica"
+              }
+            >
+              Vist Website
+            </span>
+            <span>{each.link}</span>
+          </div>
+        </Link>
       </div>
     </div>
   );
