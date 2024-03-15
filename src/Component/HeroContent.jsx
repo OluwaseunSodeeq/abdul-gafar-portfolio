@@ -119,7 +119,7 @@ function HeroContent({ breakPoint }) {
           onMouseLeave={handleMouseLeave}
           onMouseEnter={() => handleMouseEnter(i)}
           key={each.heading}
-          className={`py-4  px-6 rounded-lg  lg:shadow-custom lg:w-[880px] lg:max-w-[886px] lg:h-auto lg:text-left lg:cursor-pointer bg-plain-white text-content-color
+          className={`py-4  px-6 rounded-lg  lg:shadow-custom lg:w-[100% -320px] lg:max-w-[886px] lg:h-auto lg:text-left lg:cursor-pointer bg-plain-white text-content-color
            ${
              breakPoint && current === i
                ? "hover:bg-content-color hover:text-plain-white"

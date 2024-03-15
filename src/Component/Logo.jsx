@@ -2,10 +2,17 @@ import { Link } from "react-router-dom";
 import useOpenContext from "./Contexts/useOpenContext";
 
 function Logo() {
-  const { open, closeHamburger } = useOpenContext();
+  const { open, closeHamburger, setCurrentIndex } = useOpenContext();
+  const closeAndSetCurrentIndexhandler = (index) => {
+    setCurrentIndex(index);
+    closeHamburger();
+  };
   return (
     <Link to="/">
-      <div className="p-0 flex items-center gap-x-4" onClick={closeHamburger}>
+      <div
+        className="p-0 flex items-center gap-x-4"
+        onClick={() => closeAndSetCurrentIndexhandler(0)}
+      >
         {/* <div
           className={`flex items-center justify-center border-4 md:border-6 lg:border-8  rounded-full border-content-color w-12 h-12 md:w-16 md:h-16  lg:w-20 lg:h-20 text-center ${
             open ? "border-second-logo-color" : "border-content-color"

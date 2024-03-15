@@ -63,7 +63,7 @@ function ProjectCard({ each, projectType }) {
       <div>
         {/* <div className="font-roboto md:w-[596px] md:h-[500px] "> */}
         <div
-          className={`font-roboto md:w-[596px] ${
+          className={`font-roboto md:w-[596px] lg:w-[100%-596px-32px]   ${
             projectType === 0 ? "lg:h-[450px]" : "lg:h-[500px]"
           }`}
         >

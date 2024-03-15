@@ -11,11 +11,13 @@ import FooterBottom from "../Component/Footer/FooterBottom";
 function Homepage() {
   const breakPoint = useMediaQuery({ minWidth: 1024 });
   const { closeHamburger } = useOpenContext();
+  console.log(breakPoint, closeHamburger);
   return (
     <div className="relative lg:w-full lg:max-w-[1440px]  bg-plain-white pt-0">
       <Header />
       <div onClick={closeHamburger}>
         <HomepageHeroSection />
+
         <div className="lg-full lg:flex lg:justify-between lg:gap-x-[24px]   py-5  lg:px-[104px] ">
           <Skills breakPoint={breakPoint} />
           <HeroContent breakPoint={breakPoint} />
