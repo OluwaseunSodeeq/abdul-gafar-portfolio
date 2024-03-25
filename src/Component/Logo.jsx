@@ -28,7 +28,11 @@ function Logo() {
         </div> */}
 
         <div className="w-[45px] h-[45px] md:w-[70px] md:h-[70px]  ">
-          <img src="../tryLogo.svg" alt="logo" className="w-full h-full" />
+          {open ? (
+            <img src="../whiteLogo.png" alt="logo" className="w-full h-full" />
+          ) : (
+            <img src="../logoPic.png" alt="logo" className="w-full h-full" />
+          )}
         </div>
         <div className="p-0 font-Helvetica">
           <h4
@@ -43,7 +47,7 @@ function Logo() {
               open ? "text-second-logo-text" : "text-logo-text"
             }`}
           >
-            Ux & Product Designer
+            UX & Product Designer
           </p>
         </div>
       </div>

@@ -111,7 +111,7 @@ function HeroContent({ breakPoint }) {
   };
   return (
     <div
-      className={`font-Helvetica flex flex-col items-center gap-4 py-3 md:py-0 px-4 lg:gap-y-[35px]   md:px-0 `}
+      className={`font-Helvetica flex flex-col items-center gap-4 py-3 md:py-0 px-4 lg:gap-y-[35px]   md:px-6 lg:px-0 `}
     >
       {cardsContent.map((each, i) => (
         <div

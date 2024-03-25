@@ -3,8 +3,11 @@ import Slider from "react-slick";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import { Link } from "react-router-dom";
+import { useMediaQuery } from "react-responsive";
 
-function ProjectCard({ each, projectType }) {
+function ProjectCard({ each }) {
+  const breakpoints = useMediaQuery({ minWidth: 1000 });
+
   const startIcon = (
     <svg
       width="12"
@@ -54,25 +57,22 @@ function ProjectCard({ each, projectType }) {
 
   return (
     <div
-      className={
-        projectType === 0
-          ? "w-full h-auto px-6  md:px-12 lg:px-6 py-4 bg-bes-bg lg:flex lg:flex-row-reverse lg:justify-center gap-9  md:py-[34px] lg:py-[48px]  "
-          : "w-full h-auto px-6  md:px-12 lg:px-6 py-4 bg-second-logo-text lg:flex lg:flex-row lg:justify-center gap-9 md:py-[34px] lg:py-[48px]"
-      }
+      className={`w-full h-auto px-6  md:px-12 lg:px-6 py-4  lg:flex lg:justify-center gap-9  md:py-[48px] lg:py-[72px] ${
+        each.id % 2 !== 0 ? "lg:flex-row-reverse" : "lg:flex-row"
+      }`}
+      style={{ backgroundColor: each.bgColor }}
     >
+      {/* Content Card */}
       <div>
-        {/* <div className="font-roboto md:w-[596px] md:h-[500px] "> */}
         <div
-          className={`font-roboto md:w-[596px] lg:w-[100%-596px-32px]   ${
-            projectType === 0 ? "lg:h-[450px]" : "lg:h-[500px]"
-          }`}
+          className={`font-roboto  lg:w-[100%-596px-32px] lg:h-[500px]  ${
+            breakpoints ? "md:w-[596px]" : "md:w-[300px]"
+          }  `}
         >
           <div className="lg:pt-[24px]">
-            <img
-              src={each.logoImg}
-              className={` ${projectType === 0 ? " w-[70px] h-[70px]" : ""}`}
-              alt=" site logo"
-            />
+            <p className="font-poppins text-2xl md:text-4xl lg:text-[48px] lg:leading-[56px] text-content-color font-bold">
+              {each.title}
+            </p>
           </div>
           <div className=" flex items-center gap-2 mt-2 md:mt-1 lg:mt-4">
             <span className="text-sm leading-6 text-sub-text font-outfit font-normal lg:text-base">
@@ -90,18 +90,15 @@ function ProjectCard({ each, projectType }) {
         <Link to={each.url}>
           <div
             className={`hidden lg:flex  gap-1 items-center justify-start lg:-mt-20 lg:w-[135px]  lg:text-base lg:cursor-pointer  p-2 lg:py-2 lg:px-4  rounded-md lg:rounded-[8px]
-            ${
-              projectType === 0
-                ? "bg-bes-bg hover:bg-[#e5fbe8]"
-                : "bg-second-logo-text hover:bg-[#f7f7f7]"
-            }  `}
+           `}
+            style={{
+              backgroundColor: each.bottomBgColor,
+              // backgroundColor: each.hoverColor,
+            }}
           >
             <span
-              className={
-                projectType === 0
-                  ? "text-card2-color font-bold text-sm leading-6 font-Helvetica "
-                  : "text-[#8C98A1] font-bold text-sm leading-6 font-Helvetica"
-              }
+              className={`font-bold text-sm leading-6 font-Helvetica`}
+              style={{ color: each.bottomColor }}
             >
               Vist Website
             </span>
@@ -109,17 +106,18 @@ function ProjectCard({ each, projectType }) {
           </div>
         </Link>
       </div>
-      {/* <div className="mt-5 w-full  md:w-[596px] md:h-[524px] md:mt-0  relative  "> */}
-      <div className="mt-5 w-full  md:w-[596px]  md:mt-10  lg:mt-0 relative  ">
+      {/* Slider Card */}
+      <div className="mt-5 w-full  md:w-[596px] md:h-auto lg:h-[524px] md:mt-10  lg:mt-0 relative">
         <div
-          className={` relative px-6  md:px-10 md:py-16  lg:px-12 lg:pt-[72px] lg:pb-[48px] rounded-[24px] 
-            ${projectType === 0 ? " bg-card2-color" : " bg-[#8C98A1]"}`}
+          className={`relative px-6  md:px-10 md:py-16  lg:px-12 lg:pt-[72px] lg:pb-[48px] rounded-[24px] 
+           `}
+          style={{ backgroundColor: each.cardColor }}
         >
           <div className="relative">
             <div className="w-[98px] h-[18px] md:w-auto md:h-auto absolute left-1/2 transform -translate-x-1/2 top-[8px] md:top-[-47px] lg:top-[-52px]">
               <img
                 className={` ${
-                  projectType === 0
+                  each.id === 1
                     ? "  w-[40px] h-[40px]  lg:w-[60px] lg:h-[60px] mx-auto mt-[8px] md:mt-[-4px] lg:mt-[-13px]"
                     : "mt-[20px] md:mt-[0px]"
                 }`}
@@ -134,13 +132,18 @@ function ProjectCard({ each, projectType }) {
                     className="flex justify-center items-center flex-col "
                     key={i}
                   >
-                    <img
-                      key={i}
-                      // className="w-full h-[280px] py-[30px] md:py-0 md:w-full md:h-full cursor-grab rounded-xl"
-                      className="w-full h-[330px] pt-[70px] pb-[30px] md:py-0 md:w-full md:h-full cursor-grab rounded-xl"
-                      src={each}
-                      alt="projects"
-                    />
+                    <div
+                      className="w-full rounded-[16px]"
+                      style={{ backgroundColor: each.cardColor }}
+                    >
+                      <img
+                        key={i}
+                        className="w-full h-[330px] pt-[70px] pb-[30px] md:py-0 md:w-full md:h-full  cursor-grab rounded-[16px] "
+                        // style={{ backgroundColor: each.cardColor }}
+                        src={each}
+                        alt="projects"
+                      />
+                    </div>
                   </div>
                 );
               })}
@@ -149,19 +152,13 @@ function ProjectCard({ each, projectType }) {
         </div>
         <Link to={each.url}>
           <div
-            className={`cursor-pointer flex gap-2 items-center justify-end mt-8 max-w-[135px]  text-nowrap lg:hidden  "
-            ${
-              projectType === 0
-                ? "bg-bes-bg hover:bg-[#e5fbe8]"
-                : "bg-second-logo-text hover:bg-[#f7f7f7]"
-            }  `}
+            className={`cursor-pointer flex gap-2 items-center justify-end mt-8 p-2 rounded-[8px] max-w-[135px]  text-nowrap lg:hidden  "
+             `}
+            style={{ backgroundColor: each.bottomBgColor }}
           >
             <span
-              className={
-                projectType === 0
-                  ? "text-card2-color font-bold text-sm leading-6 font-Helvetica "
-                  : "text-[#8C98A1] font-bold text-sm leading-6 font-Helvetica"
-              }
+              className={"font-bold text-sm leading-6 font-Helvetica"}
+              style={{ color: each.bottomColor }}
             >
               Vist Website
             </span>

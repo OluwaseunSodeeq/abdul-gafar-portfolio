@@ -15,7 +15,7 @@ function HomepageHeroSection() {
           initial="hidden"
           whileInView={"show"}
           viewport={{ once: false, amount: 0.3 }}
-          className="w-full md:w-[740px] border-red-600 rounded-sm"
+          className="w-full md:w-[740px]  rounded-sm"
         >
           <img
             className=" pt-2 pb-10 px-6 h-auto  md:py-3 md:px-8  lg:py-3 lg:px-8  text-center "
@@ -32,9 +32,9 @@ function HomepageHeroSection() {
                 2000,
                 "Product Designer",
                 2000,
-                "Ui Designer",
+                "UX Designer",
                 2000,
-                "Ux Designer",
+                "UX Designer",
                 2000,
               ]}
               speed={40}

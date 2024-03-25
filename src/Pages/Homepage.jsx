@@ -5,7 +5,8 @@ import HomepageHeroSection from "../Component/HomepageHeroSection";
 import ProjectCards from "../Component/ProjectCards";
 import Skills from "../Component/SKills";
 import useOpenContext from "../Component/Contexts/useOpenContext";
-import FooterBottom from "../Component/Footer/FooterBottom";
+import FooterBottom from "../Component/Footer/FooterBottomWhite";
+// import FooterBottom from "../Component/Footer/FooterBottom";
 // import useOpenContext from "../Component/Contexts/useOpenContext";
 
 function Homepage() {
@@ -24,6 +25,7 @@ function Homepage() {
         </div>
         <ProjectCards />
       </div>
+      {/* <FooterBottom /> */}
       <FooterBottom />
     </div>
   );
