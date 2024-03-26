@@ -101,8 +101,8 @@ function ProjectCards() {
     },
     {
       id: 3,
-      title: "GADA APP ",
-      subTitle: ["", " Mobile App"],
+      title: "GADA APP",
+      subTitle: ["Mobile App", ""],
       text: "Gada App is a web app that employs a profitable and sustainable business model. Through cooperative engagement in Real Estate, Consumer Financing, and Agricultural Value Chain sectors, it strives to make food, shelter, and asset acquisition affordable for all its members.",
       bgColor: "#EEF9FE",
       cardColor: "#005CB7",
@@ -116,7 +116,7 @@ function ProjectCards() {
         "../gadaImage04.png",
       ],
       logoImg: "../gadaLogo.png",
-      url: "https://bes-beta.vercel.app/",
+      url: "",
       link: (
         <svg
           width="16"

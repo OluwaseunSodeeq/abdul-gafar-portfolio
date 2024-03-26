@@ -6,7 +6,9 @@ import { Link } from "react-router-dom";
 import { useMediaQuery } from "react-responsive";
 
 function ProjectCard({ each }) {
-  const breakpoints = useMediaQuery({ minWidth: 1000 });
+  const breakpoints = useMediaQuery({ maxWidth: 1024 });
+  const breakpoints1 = useMediaQuery({ minWidth: 950 });
+  console.log(breakpoints);
 
   const startIcon = (
     <svg
@@ -66,7 +68,7 @@ function ProjectCard({ each }) {
       <div>
         <div
           className={`font-roboto  lg:w-[100%-596px-32px] lg:h-[500px]  ${
-            breakpoints ? "md:w-[596px]" : "md:w-[300px]"
+            breakpoints1 && breakpoints ? "md:w-[300px]" : "md:w-[596px]"
           }  `}
         >
           <div className="lg:pt-[24px]">
@@ -118,8 +120,8 @@ function ProjectCard({ each }) {
               <img
                 className={` ${
                   each.id === 1
-                    ? "  w-[40px] h-[40px]  lg:w-[60px] lg:h-[60px] mx-auto mt-[8px] md:mt-[-4px] lg:mt-[-13px]"
-                    : "mt-[20px] md:mt-[0px]"
+                    ? "  w-[40px] h-[40px]  lg:w-[60px] lg:h-[60px] mx-auto mt-[-2.5px] md:mt-[-4px] lg:mt-[-13px]"
+                    : "mt-[6px] md:mt-[0px]"
                 }`}
                 src={each.logoImg}
                 alt=" site logo"
@@ -138,7 +140,7 @@ function ProjectCard({ each }) {
                     >
                       <img
                         key={i}
-                        className="w-full h-[330px] pt-[70px] pb-[30px] md:py-0 md:w-full md:h-full  cursor-grab rounded-[16px] "
+                        className="w-full h-[330px] pt-[50px] pb-[30px] md:py-0 md:w-full md:h-full  cursor-grab rounded-[16px] "
                         // style={{ backgroundColor: each.cardColor }}
                         src={each}
                         alt="projects"
