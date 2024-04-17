@@ -7,6 +7,7 @@ import { OpenContextProvider } from "./Component/Contexts/OpenContext";
 import { Toaster } from "react-hot-toast";
 // import { LoaderIcon, Toaster } from "react-hot-toast";
 import Loader from "./Component/Loader";
+import Header from "./Component/Header";
 
 const Homepage = lazy(() => import("./Pages/Homepage"));
 const AboutMe = lazy(() => import("./Pages/AboutMe"));
@@ -14,10 +15,11 @@ const Contact = lazy(() => import("./Pages/Contact"));
 
 function App() {
   return (
-    <div className="w-full  p-0 m-0 lg:w-full lg:max-w-[1440px] lg:mx-auto lg:overflow-x-hidden">
+    <div className="w-full  p-0 m-0 lg:w-full  lg:mx-auto lg:overflow-x-hidden">
       <OpenContextProvider>
         <BrowserRouter>
           <Suspense fallback={<Loader />}>
+            <Header />
             <Routes>
               <Route index element={<Homepage />} />
               <Route path="/about" element={<AboutMe />} />

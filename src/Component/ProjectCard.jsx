@@ -27,11 +27,11 @@ function ProjectCard({ each }) {
   var settings = {
     dots: true,
     infinite: true,
-    speed: 500,
+    speed: 1000,
     slidesToShow: 1,
     slidesToScroll: 1,
     autoplay: true,
-    autoplaySpeed: 1000,
+    autoplaySpeed: 1500,
     prevArrow: <></>,
     nextArrow: <></>,
     appendDots: (dots) => (
@@ -59,7 +59,7 @@ function ProjectCard({ each }) {
 
   return (
     <div
-      className={`w-full h-auto px-6  md:px-12 lg:px-6 py-4  lg:flex lg:justify-center gap-9  md:py-[48px] lg:py-[72px] ${
+      className={`w-full h-auto px-6  md:px-12 lg:px-6 py-6  lg:flex lg:justify-center gap-9  md:py-[48px] lg:py-[72px] ${
         each.id % 2 !== 0 ? "lg:flex-row-reverse" : "lg:flex-row"
       }`}
       style={{ backgroundColor: each.bgColor }}
@@ -89,13 +89,12 @@ function ProjectCard({ each }) {
             {each.text}
           </p>
         </div>
-        <Link to={each.url}>
+        <Link to={each.url} target="_blank" rel="noopener noreferrer">
           <div
             className={`hidden lg:flex  gap-1 items-center justify-start lg:-mt-20 lg:w-[135px]  lg:text-base lg:cursor-pointer  p-2 lg:py-2 lg:px-4  rounded-md lg:rounded-[8px]
            `}
             style={{
               backgroundColor: each.bottomBgColor,
-              // backgroundColor: each.hoverColor,
             }}
           >
             <span
@@ -109,7 +108,7 @@ function ProjectCard({ each }) {
         </Link>
       </div>
       {/* Slider Card */}
-      <div className="mt-5 w-full  md:w-[596px] md:h-auto lg:h-[524px] md:mt-10  lg:mt-0 relative">
+      <div className="mt-7 md:mt-8 w-full  md:w-[596px] md:h-auto lg:h-[524px] lg:mt-0  relative ">
         <div
           className={`relative px-6  md:px-10 md:py-16  lg:px-12 lg:pt-[72px] lg:pb-[48px] rounded-[24px] 
            `}
@@ -152,9 +151,9 @@ function ProjectCard({ each }) {
             </Slider>
           </div>
         </div>
-        <Link to={each.url}>
+        <Link to={each.url} target="_blank" rel="noopener noreferrer">
           <div
-            className={`cursor-pointer flex gap-2 items-center justify-end mt-8 p-2 rounded-[8px] max-w-[135px]  text-nowrap lg:hidden  "
+            className={`cursor-pointer flex gap-2 items-center justify-end mt-8 p-2 rounded-[8px]  text-nowrap lg:hidden  "
              `}
             style={{ backgroundColor: each.bottomBgColor }}
           >

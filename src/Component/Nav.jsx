@@ -35,7 +35,7 @@ function Nav() {
   return (
     // <Container>
 
-    <div className="border border-user-color">
+    <div className="border border-user-color transition-transform duration-2000 ">
       {/* {breakpointsNav && <Header />} */}
       <div className=" w-full mx-auto  bg-user-color absolute z-30  ">
         <ul
@@ -44,7 +44,7 @@ function Nav() {
         >
           <li
             // key={id[0]}
-            className={`font-bold font-Helvetica text-[32px] leading-[48px]  hover:text-second-logo-text ${
+            className={`font-bold font-Helvetica cursor-pointer text-[32px] leading-[48px]  hover:text-second-logo-text ${
               navsLinks[0].id === currentIndex
                 ? "text-second-logo-text"
                 : "text-unactive-color"
@@ -73,7 +73,7 @@ function Nav() {
 
           <li
             // key={id[0]}
-            className={`font-bold font-Helvetica text-[32px] leading-[48px]  ${
+            className={`font-bold font-Helvetica cursor-pointer text-[32px] leading-[48px]  ${
               navsLinks[2].id === currentIndex
                 ? "text-second-logo-text"
                 : "text-unactive-color"
@@ -101,7 +101,7 @@ function Nav() {
           </li>
           <li
             // key={id[0]}
-            className={`font-bold font-Helvetica text-[32px] leading-[48px]  ${
+            className={`font-bold font-Helvetica cursor-pointer text-[32px] leading-[48px]  ${
               navsLinks[3].id === currentIndex
                 ? "text-second-logo-text"
                 : "text-unactive-color"
@@ -129,13 +129,15 @@ function Nav() {
           </li>
           <li
             // key={id[0]}
-            className={`font-bold font-Helvetica text-[32px] leading-[48px]  ${
+            className={`font-bold font-Helvetica cursor-pointer text-[32px] leading-[48px]  ${
               navsLinks[4].id === currentIndex
                 ? "text-second-logo-text"
                 : "text-unactive-color"
             }`}
           >
             <NavLink
+              target="_blank"
+              rel="noopener noreferrer"
               onClick={() => closeHandler(navsLinks[4].id)}
               to={navsLinks[4].link}
             >
@@ -157,13 +159,15 @@ function Nav() {
           </li>
           <li
             // key={id[0]}
-            className={`font-bold font-Helvetica text-[32px] leading-[48px]  ${
+            className={`font-bold font-Helvetica cursor-pointer text-[32px] leading-[48px]  ${
               navsLinks[5].id === currentIndex
                 ? "text-second-logo-text"
                 : "text-unactive-color"
             }`}
           >
             <NavLink
+              target="_blank"
+              rel="noopener noreferrer"
               onClick={() => closeHandler(navsLinks[5].id)}
               to={navsLinks[5].link}
             >
@@ -185,13 +189,15 @@ function Nav() {
           </li>
           <li
             // key={id[0]}
-            className={`font-bold font-Helvetica text-[32px] leading-[48px]  ${
+            className={`font-bold font-Helvetica cursor-pointer text-[32px] leading-[48px]  ${
               navsLinks[6].id === currentIndex
                 ? "text-second-logo-text"
                 : "text-unactive-color"
             }`}
           >
             <NavLink
+              target="_blank"
+              rel="noopener noreferrer"
               onClick={() => closeHandler(navsLinks[6].id)}
               to={navsLinks[6].link}
             >
@@ -213,13 +219,15 @@ function Nav() {
           </li>
           <li
             // key={id[0]}
-            className={`font-bold font-Helvetica text-[32px] leading-[48px]  ${
+            className={`font-bold font-Helvetica cursor-pointer text-[32px] leading-[48px]  ${
               navsLinks[7].id === currentIndex
                 ? "text-second-logo-text"
                 : "text-unactive-color"
             }`}
           >
             <NavLink
+              target="_blank"
+              rel="noopener noreferrer"
               onClick={() => closeHandler(navsLinks[7].id)}
               to={navsLinks[7].link}
             >

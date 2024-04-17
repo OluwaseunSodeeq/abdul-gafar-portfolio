@@ -7,7 +7,9 @@ const Hamburger = function () {
     <div
       onClick={hamburgerHandler}
       className={`lg:w-26 flex items-center justify-end cursor-pointer lg:border lg:border-content-color lg:rounded-[8px] lg:py-1 lg:px-3 ${
-        open ? "lg:border-second-logo-color" : "lg:border-content-color"
+        open
+          ? "lg:border-second-logo-color cursor-pointer"
+          : "lg:border-content-color"
       } `}
     >
       <h4

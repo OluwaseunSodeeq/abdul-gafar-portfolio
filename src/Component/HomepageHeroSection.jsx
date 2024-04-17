@@ -9,7 +9,7 @@ function HomepageHeroSection() {
   // const [ref, inView] = useInView({ threshold: 0.5 });
   return (
     <div onClick={closeHamburger}>
-      <div className=" relative mt-[126px] h-auto flex justify-center items-center flex-col  overflow-x-hidden md:mt-36  lg:mt-36 lg:pb-[60px] bg-plain-white">
+      <div className=" lg:w-full relative mt-[126px] h-auto flex justify-center items-center flex-col  overflow-x-hidden md:mt-36  lg:mt-36 lg:pb-[60px] bg-plain-white">
         <motion.div
           variants={fadeIn("up", 0.7)}
           initial="hidden"

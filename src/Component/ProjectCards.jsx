@@ -56,9 +56,10 @@ function ProjectCards() {
       title: "Flaapcop ",
       subTitle: ["Web ", " Mobile App"],
       text: "Flapcoop is a web app that employs a profitable and sustainable business model. Through cooperative engagement in Real Estate, Consumer Financing, and Agricultural Value Chain sectors, it strives to make food, shelter, and asset acquisition affordable for all its members.",
-      bgColor: "#F2F4F6",
+      bgColor: "#FAFBFC",
       cardColor: "#8C98A1",
-      bottomBgColor: "#F2F4F6",
+      bottomBgColor: "#FAFBFC",
+      // bottomBgColor: "#F2F4F6",
       bottomColor: "#8C98A1",
       hoverColor: "#f7f7f7",
       cardImg: [
@@ -105,8 +106,10 @@ function ProjectCards() {
       subTitle: ["Mobile App", ""],
       text: "Gada App is a web app that employs a profitable and sustainable business model. Through cooperative engagement in Real Estate, Consumer Financing, and Agricultural Value Chain sectors, it strives to make food, shelter, and asset acquisition affordable for all its members.",
       bgColor: "#EEF9FE",
-      cardColor: "#005CB7",
-      bottomBgColor: "#C9ECFB",
+      // cardColor: "#005CB7",
+      cardColor: "#348CD3",
+      bottomBgColor: "#EEF9FE",
+      // bottomBgColor: "#C9ECFB",
       bottomColor: "#818B94",
       hoverColor: "#f7f7f7",
       cardImg: [
@@ -150,8 +153,8 @@ function ProjectCards() {
   ];
 
   return (
-    <div className="w-full flex flex-col pt-5 pb-0  lg:pb-5 ">
-      {projectArray.map((each, i) => (
+    <div className="w-full flex flex-col pt-5 pb-0  lg:pb-5 border-t lg:mt-[30px] lg:pt-[40px] ">
+      {projectArray.map((each, _) => (
         <ProjectCard each={each} key={each.title} />
       ))}
     </div>

@@ -6,7 +6,11 @@ function OpenContextProvider({ children }) {
   const [open, setOpen] = useState(false);
   const [currentIndex, setCurrentIndex] = useState(0);
   const hamburgerHandler = () => setOpen(!open);
-  const closeHamburger = (e) => setOpen(false);
+
+  const closeHamburger = () => {
+    // e.preventDefault();
+    setOpen(false);
+  };
 
   return (
     <OpenContextData.Provider

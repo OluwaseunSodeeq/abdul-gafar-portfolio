@@ -22,7 +22,14 @@ function DownlaodCv() {
             : "transition duration-300 ease-out font-bold font-Helvetica text-[32px] leading-[48px] text-unactive-color hover:text-second-logo-text tracking-wide hover:tracking-widest"
         }text-nowrap ${open ? "text-second-logo-color" : "text-content-color"}`}
       >
-        Download CV
+        {" "}
+        <a
+          href="..abdulGafar_jimoh-CV.pdf"
+          download="abdulGafar_jimoh-CV.pdf"
+          className=""
+        >
+          Download CV
+        </a>
       </h4>
       <span
         className={`${
