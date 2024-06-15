@@ -7,6 +7,7 @@ import useOpenContext from "../Contexts/useOpenContext";
 import { useForm } from "react-hook-form";
 import Error from "../Error";
 import toast from "react-hot-toast";
+import { NavLink } from "react-router-dom";
 
 function ContactHeroSection() {
   const form = useRef();
@@ -136,6 +137,7 @@ function ContactHeroSection() {
           </defs>
         </svg>
       ),
+      link: "",
     },
     {
       socialHandle: "Whatsapp",
@@ -189,6 +191,7 @@ function ContactHeroSection() {
           </defs>
         </svg>
       ),
+      link: "",
     },
     {
       socialHandle: "Linkedln",
@@ -206,6 +209,7 @@ function ContactHeroSection() {
           />
         </svg>
       ),
+      link: "https://www.linkedin.com/in/jimoh-gafar-63a51627a?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=ios_app",
     },
     {
       socialHandle: "Twitter",
@@ -230,6 +234,7 @@ function ContactHeroSection() {
           </defs>
         </svg>
       ),
+      link: "https://x.com/moore__g?s=11&t=_L--Oyl2Z7pW4eps0BUNnQ",
     },
     {
       socialHandle: "Facebook",
@@ -452,15 +457,19 @@ function ContactHeroSection() {
           </h3>
           <div className="flex justify-between py-[72px]">
             {contactOptnArray.map((each) => (
-              <div
+              <NavLink
                 key={each.socialHandle}
-                className="w-[200px] lg:h-[72px] flex items-center justify-center gap-3 bg-plain-white shadow-md  "
+                target="_blank"
+                rel="noopener noreferrer"
+                to={each.link}
               >
-                <span>{each.icon}</span>
-                <span className="font-Helvetica font-bold text-xl leading-7 tracking-widest">
-                  {each.socialHandle}
-                </span>
-              </div>
+                <div className="w-[200px] lg:h-[72px] flex items-center justify-center gap-3 bg-plain-white shadow-md  ">
+                  <span>{each.icon}</span>
+                  <span className="font-Helvetica font-bold text-xl leading-7 tracking-widest">
+                    {each.socialHandle}
+                  </span>
+                </div>
+              </NavLink>
             ))}
           </div>
         </div>

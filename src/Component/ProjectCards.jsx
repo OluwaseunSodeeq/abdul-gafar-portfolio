@@ -118,7 +118,7 @@ function ProjectCards() {
         "../gadaImage03.png",
         "../gadaImage04.png",
       ],
-      logoImg: "../gadaLogo.png",
+      logoImg: "../gadaLogo1.png",
       url: "",
       link: (
         <svg
