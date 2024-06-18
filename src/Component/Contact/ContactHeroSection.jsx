@@ -12,11 +12,25 @@ import { NavLink } from "react-router-dom";
 function ContactHeroSection() {
   const form = useRef();
 
+  ////////////////// WHATSAPP stuff//////////////
+  const phoneNumber = "+2347068451428";
+  const message = "Hello, How can i be of help?";
+  const encodedMessage = encodeURIComponent(message);
+  const whatsappLink = `https://wa.me/${phoneNumber}?text=${encodedMessage}`;
+
+  const whatSappHandler = () => {
+    window.open(whatsappLink, "_blank");
+  };
+  ////////////////// WHATSAPP stuff//////////////
+
   const { closeHamburger } = useOpenContext();
+
+  ////////////////////// VALIDATION STUFF//////////////////////
   const textRegex = /^[A-Za-z]+(?:\s+[A-Za-z]+)*$/;
   const emailRegex = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/;
   const phoneRegex = /^\+(?:\d{1,3}-?){1,3}\d{1,14}$/;
   const phoneNumLength = 14;
+  ////////////////////// VALIDATION STUFF//////////////////////
 
   // const formID = "xkndzqra";
 
@@ -86,6 +100,7 @@ function ContactHeroSection() {
 
   const contactOptnArray = [
     {
+      type: "email",
       socialHandle: "Email",
       icon: (
         <svg
@@ -137,9 +152,10 @@ function ContactHeroSection() {
           </defs>
         </svg>
       ),
-      link: "",
+      link: "Gafarj544@gmail.com",
     },
     {
+      type: "handler",
       socialHandle: "Whatsapp",
       icon: (
         <svg
@@ -192,8 +208,10 @@ function ContactHeroSection() {
         </svg>
       ),
       link: "",
+      handler: whatSappHandler,
     },
     {
+      type: "link",
       socialHandle: "Linkedln",
       icon: (
         <svg
@@ -212,6 +230,7 @@ function ContactHeroSection() {
       link: "https://www.linkedin.com/in/jimoh-gafar-63a51627a?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=ios_app",
     },
     {
+      type: "link",
       socialHandle: "Twitter",
       icon: (
         <svg
@@ -237,6 +256,7 @@ function ContactHeroSection() {
       link: "https://x.com/moore__g?s=11&t=_L--Oyl2Z7pW4eps0BUNnQ",
     },
     {
+      type: "link",
       socialHandle: "Facebook",
       icon: (
         <svg
@@ -252,6 +272,7 @@ function ContactHeroSection() {
           />
         </svg>
       ),
+      link: "https://www.facebook.com/jimoh.gafar.3597?mibextid=LQQJ4d",
     },
   ];
 
@@ -456,21 +477,59 @@ function ContactHeroSection() {
             Other Contact Options
           </h3>
           <div className="flex justify-between py-[72px]">
-            {contactOptnArray.map((each) => (
-              <NavLink
-                key={each.socialHandle}
-                target="_blank"
-                rel="noopener noreferrer"
-                to={each.link}
-              >
-                <div className="w-[200px] lg:h-[72px] flex items-center justify-center gap-3 bg-plain-white shadow-md  ">
-                  <span>{each.icon}</span>
-                  <span className="font-Helvetica font-bold text-xl leading-7 tracking-widest">
-                    {each.socialHandle}
-                  </span>
-                </div>
-              </NavLink>
-            ))}
+            {contactOptnArray.map((each) => {
+              const { link, type, handler, socialHandle, icon } = each;
+              if (type === "handler") {
+                return (
+                  <div
+                    key={socialHandle}
+                    className="cursor-pointer"
+                    onClick={handler}
+                  >
+                    <div className="w-[200px] lg:h-[72px] flex items-center justify-center gap-3 bg-plain-white shadow-md">
+                      <span>{icon}</span>
+                      <span className="font-Helvetica font-bold text-xl leading-7 tracking-widest">
+                        {socialHandle}
+                      </span>
+                    </div>
+                  </div>
+                );
+              } else if (type === "email") {
+                return (
+                  <a
+                    key={socialHandle}
+                    href={`mailto:${link}`}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                  >
+                    <div className="w-[200px] lg:h-[72px] flex items-center justify-center gap-3 bg-plain-white shadow-md">
+                      <span>{icon}</span>
+                      <span className="font-Helvetica font-bold text-xl leading-7 tracking-widest">
+                        {socialHandle}
+                      </span>
+                    </div>
+                  </a>
+                );
+              } else if (type === "link") {
+                return (
+                  <NavLink
+                    key={socialHandle}
+                    to={link}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                  >
+                    <div className="w-[200px] lg:h-[72px] flex items-center justify-center gap-3 bg-plain-white shadow-md">
+                      <span>{icon}</span>
+                      <span className="font-Helvetica font-bold text-xl leading-7 tracking-widest">
+                        {socialHandle}
+                      </span>
+                    </div>
+                  </NavLink>
+                );
+              } else {
+                return null;
+              }
+            })}
           </div>
         </div>
       </Container>

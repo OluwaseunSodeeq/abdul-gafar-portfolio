@@ -56,7 +56,21 @@ function ProjectCard({ each }) {
       </>
     ),
   };
-
+  // const visitWebsiteContent = (
+  //   <div
+  //     className={`cursor-pointer flex gap-2 items-center justify-end mt-8 p-2 rounded-[8px]  text-nowrap lg:hidden  "
+  //   `}
+  //     style={{ backgroundColor: each.bottomBgColor }}
+  //   >
+  //     <span
+  //       className={"font-bold text-sm leading-6 font-Helvetica"}
+  //       style={{ color: each.bottomColor }}
+  //     >
+  //       Vist Website
+  //     </span>
+  //     <span>{each.link}</span>
+  //   </div>
+  // );
   return (
     <div
       className={`w-full h-auto px-6  md:px-12 lg:px-6 py-6  lg:flex lg:justify-center gap-9  md:py-[48px] lg:py-[72px] ${
@@ -89,23 +103,48 @@ function ProjectCard({ each }) {
             {each.text}
           </p>
         </div>
-        <Link to={each.url} target="_blank" rel="noopener noreferrer">
-          <div
-            className={`hidden lg:flex  gap-1 items-center justify-start lg:-mt-20 lg:w-[135px]  lg:text-base lg:cursor-pointer  p-2 lg:py-2 lg:px-4  rounded-md lg:rounded-[8px]
+        {each.title !== "store" ? (
+          <Link to={each.url} target="_blank" rel="noopener noreferrer">
+            <div
+              className={`hidden lg:flex  gap-1 items-center justify-start lg:-mt-20 lg:w-[135px]  lg:text-base lg:cursor-pointer  p-2 lg:py-2 lg:px-4  rounded-md lg:rounded-[8px]
            `}
-            style={{
-              backgroundColor: each.bottomBgColor,
-            }}
-          >
-            <span
-              className={`font-bold text-sm leading-6 font-Helvetica`}
-              style={{ color: each.bottomColor }}
+              style={{
+                backgroundColor: each.bottomBgColor,
+              }}
             >
-              Vist Website
-            </span>
-            <span>{each.link}</span>
+              <span
+                className={`font-bold text-sm leading-6 font-Helvetica`}
+                style={{ color: each.bottomColor }}
+              >
+                Vist Website
+              </span>
+              <span>{each.link}</span>
+            </div>
+          </Link>
+        ) : (
+          <div
+            onClick={() =>
+              each.url(each.title.trim().toLowerCase().replace(/ /g, "+"))
+            }
+            className={"cursor-pointer"}
+          >
+            <div
+              className={`hidden lg:flex  gap-1 items-center justify-start lg:-mt-20 lg:w-[135px]  lg:text-base lg:cursor-pointer  p-2 lg:py-2 lg:px-4  rounded-md lg:rounded-[8px]
+           `}
+              style={{
+                backgroundColor: each.bottomBgColor,
+              }}
+            >
+              <span
+                className={`font-bold text-sm leading-6 font-Helvetica`}
+                style={{ color: each.bottomColor }}
+              >
+                Vist Website
+              </span>
+              <span>{each.link}</span>
+            </div>
           </div>
-        </Link>
+        )}
       </div>
       {/* Slider Card */}
       <div className="mt-7 md:mt-8 w-full  md:w-[596px] md:h-auto lg:h-[524px] lg:mt-0  relative ">
@@ -151,21 +190,44 @@ function ProjectCard({ each }) {
             </Slider>
           </div>
         </div>
-        <Link to={each.url} target="_blank" rel="noopener noreferrer">
-          <div
-            className={`cursor-pointer flex gap-2 items-center justify-end mt-8 p-2 rounded-[8px]  text-nowrap lg:hidden  "
+        {each.title !== "store" ? (
+          <Link to={each.url} target="_blank" rel="noopener noreferrer">
+            <div
+              className={`cursor-pointer flex gap-2 items-center justify-end mt-8 p-2 rounded-[8px]  text-nowrap lg:hidden  "
              `}
-            style={{ backgroundColor: each.bottomBgColor }}
-          >
-            <span
-              className={"font-bold text-sm leading-6 font-Helvetica"}
-              style={{ color: each.bottomColor }}
+              style={{ backgroundColor: each.bottomBgColor }}
             >
-              Vist Website
-            </span>
-            <span>{each.link}</span>
+              <span
+                className={"font-bold text-sm leading-6 font-Helvetica"}
+                style={{ color: each.bottomColor }}
+              >
+                Vist Website
+              </span>
+              <span>{each.link}</span>
+            </div>
+          </Link>
+        ) : (
+          <div
+            onClick={() =>
+              each.url(each.title.trim().toLowerCase().replace(/ /g, "+"))
+            }
+            className={"cursor-pointer "}
+          >
+            <div
+              className={`cursor-pointer flex gap-2 items-center justify-end mt-8 p-2 rounded-[8px]  text-nowrap lg:hidden  "
+             `}
+              style={{ backgroundColor: each.bottomBgColor }}
+            >
+              <span
+                className={"font-bold text-sm leading-6 font-Helvetica"}
+                style={{ color: each.bottomColor }}
+              >
+                Vist Website
+              </span>
+              <span>{each.link}</span>
+            </div>
           </div>
-        </Link>
+        )}
       </div>
     </div>
   );

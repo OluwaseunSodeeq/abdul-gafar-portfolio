@@ -1,6 +1,29 @@
 import ProjectCard from "./ProjectCard";
 
 function ProjectCards() {
+  // GADA APP URL FUNCTION
+  const openStore = (name) => {
+    console.log(name);
+    const userAgent = navigator.userAgent || navigator.vendor || window.opera;
+
+    if (/iPad|iPhone|iPod/.test(userAgent) && !window.MSStream) {
+      window.open(
+        `https://apps.apple.com/us/search?term=${name}/login/`,
+        "_blank"
+      );
+    } else if (/android/i.test(userAgent)) {
+      window.open(
+        `https://play.google.com/store/search?q=${name}/login/`,
+        "_blank"
+      );
+    } else {
+      window.open(
+        `https://www.google.com/search?q=${name}/login/+app`,
+        "_blank"
+      );
+    }
+  };
+  console.log(openStore);
   // UI DATA
   const projectArray = [
     {
@@ -53,7 +76,7 @@ function ProjectCards() {
     },
     {
       id: 2,
-      title: "Flaapcop ",
+      title: "FLAPCOOP ",
       subTitle: ["Web ", " Mobile App"],
       text: "Flapcoop is a web app that employs a profitable and sustainable business model. Through cooperative engagement in Real Estate, Consumer Financing, and Agricultural Value Chain sectors, it strives to make food, shelter, and asset acquisition affordable for all its members.",
       bgColor: "#FAFBFC",
@@ -69,7 +92,8 @@ function ProjectCards() {
         "../flapro4.png",
       ],
       logoImg: "../flapcoop.png",
-      url: "https://bes-beta.vercel.app/",
+      url: "https://flapcoop.com/",
+      // url: openStore,
       link: (
         <svg
           width="16"
@@ -104,12 +128,10 @@ function ProjectCards() {
       id: 3,
       title: "GADA APP",
       subTitle: ["Mobile App", ""],
-      text: "Gada App is a web app that employs a profitable and sustainable business model. Through cooperative engagement in Real Estate, Consumer Financing, and Agricultural Value Chain sectors, it strives to make food, shelter, and asset acquisition affordable for all its members.",
+      text: "Gada is a reliable logistics service provider app that ensures your items arrive safely and swiftly from doorstep to destination, offering convenient and dependable delivery at your fingertips.",
       bgColor: "#EEF9FE",
-      // cardColor: "#005CB7",
       cardColor: "#348CD3",
       bottomBgColor: "#EEF9FE",
-      // bottomBgColor: "#C9ECFB",
       bottomColor: "#818B94",
       hoverColor: "#f7f7f7",
       cardImg: [
@@ -119,7 +141,8 @@ function ProjectCards() {
         "../gadaImage04.png",
       ],
       logoImg: "../gadaLogo1.png",
-      url: "",
+      url: "https://gada.com/",
+      // url: openStore,
       link: (
         <svg
           width="16"
