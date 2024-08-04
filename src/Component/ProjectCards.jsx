@@ -141,7 +141,7 @@ function ProjectCards() {
         "../gadaImage04.png",
       ],
       logoImg: "../gadaLogo1.png",
-      url: "https://gada.com/",
+      url: "https://apps.apple.com/us/app/gada-customer/id6578457399",
       // url: openStore,
       link: (
         <svg
